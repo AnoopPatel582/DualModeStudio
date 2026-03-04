@@ -13,8 +13,8 @@ function splitWords(text) {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-24 md:pt-32">
-      <SmokyBackground />
+    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 md:pt-40">
+      {/* <SmokyBackground /> */}
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
 

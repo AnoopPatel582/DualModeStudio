@@ -1,5 +1,6 @@
 import "./globals.css";
 import { inter, syne } from "./fonts";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "DualModeStudio",
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.variable} ${syne.variable} font-sans bg-black text-white antialiased`}>
         {children}
+        <Footer />
       </body>
     </html>
   );
