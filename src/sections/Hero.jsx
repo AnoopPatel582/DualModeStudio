@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-import SmokyBackground from "@/components/SmokyBackground";
+
+// Replace with your Cloudinary video URL for the hero background animation
+const HERO_BG_VIDEO_URL =
+  "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772741825/Nested_Sequence_719_1_mwalpc.mp4";
 
 const heading = "DualMode Studio";
 const subheading = "Social Media production, retention editing & more";
@@ -13,11 +16,23 @@ function splitWords(text) {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 md:pt-40">
-      {/* <SmokyBackground /> */}
+    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 md:pt-40 overflow-hidden">
+      {/* Background video with reduced opacity */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        >
+          <source src={HERO_BG_VIDEO_URL} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40" aria-hidden />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
-
         {/* Main Heading */}
         <motion.h1
           className={`${syne.className} font-bold text-[48px] md:text-[72px] lg:text-[96px] leading-normal md:whitespace-nowrap`}
@@ -91,7 +106,6 @@ export default function Hero() {
           Spending hours editing but still watching your retention flatline?
           DualMode Studio changes that.
         </motion.p>
-
       </div>
     </section>
   );

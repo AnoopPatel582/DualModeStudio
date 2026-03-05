@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ScrollReveal from "@/components/ScrollReveal";
 import Hero from "@/sections/Hero";
 import HeroVideoSection from "@/sections/HeroVideoSection";
 import GrowthFrameworkSection from "@/sections/GrowthFrameworkSection";
@@ -13,13 +14,27 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <HeroVideoSection />
-      <GrowthFrameworkSection />
-      <AuthorityAndAdvantageSection />
-      <ExecutionCapabilitiesSection />
-      <MotionGraphicsSection />
-      <FoundersSection />
-      <ContactPage />
+      <ScrollReveal>
+        <HeroVideoSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <GrowthFrameworkSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <AuthorityAndAdvantageSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ExecutionCapabilitiesSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <MotionGraphicsSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <FoundersSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ContactPage />
+      </ScrollReveal>
     </>
   );
 } 
