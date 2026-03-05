@@ -4,6 +4,7 @@ import HeroVideoSection from "@/sections/HeroVideoSection";
 import GrowthFrameworkSection from "@/sections/GrowthFrameworkSection";
 import AuthorityAndAdvantageSection from "@/sections/AuthorityAndAdvantageSection";
 import ExecutionCapabilitiesSection from "@/sections/ExecutionCapabilitiesSection";
+import FoundersSection from "@/sections/FoundersSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <GrowthFrameworkSection />
       <AuthorityAndAdvantageSection />
       <ExecutionCapabilitiesSection />
+      <FoundersSection />
     </>
   );
 } 

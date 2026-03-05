@@ -6,21 +6,23 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/10 py-8">
       <div className="mx-auto max-w-[1400px] px-6">
-        
+
         {/* Top Grid */}
         <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
-          
+
           {/* Column 1 — Brand */}
           <div>
-            <Link href="/">
-                    <Image
-                        src="/logo_title.png"
-                        alt="DualModeStudio Logo"
-                        width={300}
-                        height={100}
-                        priority
-                    />
-                </Link>
+            <div className=" p-0 m-0">
+              <Link href="/">
+                <Image
+                  src="/logo_title.png"
+                  alt="DualModeStudio Logo"
+                  width={300}
+                  height={100}
+                  priority
+                />
+              </Link>
+            </div>
             <p className="mt-4 text-white/60 leading-relaxed">
               Performance-driven YouTube growth systems engineered for scale.
             </p>
