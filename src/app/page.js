@@ -5,6 +5,8 @@ import GrowthFrameworkSection from "@/sections/GrowthFrameworkSection";
 import AuthorityAndAdvantageSection from "@/sections/AuthorityAndAdvantageSection";
 import ExecutionCapabilitiesSection from "@/sections/ExecutionCapabilitiesSection";
 import FoundersSection from "@/sections/FoundersSection";
+import ContactPage from "@/app/contact/page";
+import MotionGraphicsSection from "@/sections/MotionGraphicsSection";
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
       <GrowthFrameworkSection />
       <AuthorityAndAdvantageSection />
       <ExecutionCapabilitiesSection />
+      <MotionGraphicsSection />
       <FoundersSection />
+      <ContactPage />
     </>
   );
 } 
