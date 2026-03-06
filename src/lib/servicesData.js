@@ -3,7 +3,7 @@ export const servicesData = [
       title: "Long-Form Video Editing",
       description:
         "High-retention edits engineered for watch time, pacing, and audience engagement.",
-      slug: "/services/long-form-video-editing",
+      slug: "/long-form-editing",
     },
     {
       title: "Short-Form Video Editing",
