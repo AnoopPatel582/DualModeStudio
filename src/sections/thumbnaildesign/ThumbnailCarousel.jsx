@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const thumbnails = [
   "/thumb1.png",
@@ -13,7 +13,7 @@ const thumbnails = [
 
 export default function ThumbnailCarousel() {
 
-  const [rotation, setRotation] = useState(0);
+  const [rotation, setRotation] = useState(0); // degrees
   const [paused, setPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -21,22 +21,23 @@ export default function ThumbnailCarousel() {
   const angleStep = 360 / total;
 
   // Detect which thumbnail is currently in front
-  const frontIndex =
-    ((Math.round(-rotation / angleStep) % total) + total) % total;
+  const frontIndex = useMemo(() => {
+    const normalized = ((rotation % 360) + 360) % 360; // 0..360
+    // front is angle closest to 0deg
+    return (Math.round(normalized / angleStep) % total + total) % total;
+  }, [rotation, angleStep, total]);
 
 
-  // Auto rotation
+  // Step-wise auto rotation (pause on hover)
   useEffect(() => {
-
     if (paused) return;
 
     const interval = setInterval(() => {
       setRotation((prev) => prev + angleStep);
-    }, 3000);
+    }, 1400); // ~0.7s move + ~0.7s pause (via CSS transition)
 
     return () => clearInterval(interval);
-
-  }, [paused]);
+  }, [paused, angleStep]);
 
 
   // Click thumbnail
@@ -48,9 +49,10 @@ export default function ThumbnailCarousel() {
       setActiveIndex(index);
 
     } else {
-
-      // Rotate clicked thumbnail to front
-      setRotation(-index * angleStep);
+      // Snap clicked thumbnail to front.
+      // We want the clicked item's orbit angle to become 0deg.
+      const target = index * angleStep;
+      setRotation(target);
 
     }
   };
@@ -93,51 +95,62 @@ export default function ThumbnailCarousel() {
 
 
 
-      {/* 3D Carousel */}
-
+      {/* 3D Carousel (true orbit) */}
       <div
-        className="flex justify-center items-center perspective-[1200px]"
+        className="relative flex justify-center items-center mb-18"
+        style={{ perspective: "1400px" }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-
         <div
+          className="relative w-[900px] max-w-[95vw] h-[320px]"
           style={{
-            transform: `rotateY(${rotation}deg)`
+            transformStyle: "preserve-3d",
+            transform: "rotateX(-10deg)",
           }}
-          className="relative w-[420px] h-[250px] transform-style-preserve-3d transition-transform duration-700"
         >
-
           {thumbnails.map((thumb, i) => {
+            // orbit angle for this item
+            const a = i * angleStep - rotation;
+            const rad = (a * Math.PI) / 180;
 
-            const angle = angleStep * i;
+            // circle radius (depth) + horizontal spread
+            const radius = 520;
+            const x = Math.sin(rad) * 360;
+            const z = Math.cos(rad) * radius;
+
+            // depth-based scale/opacity (front bigger/brighter)
+            const depth01 = (z + radius) / (2 * radius); // 0..1
+            const scale = 0.75 + depth01 * 0.35;
+            const opacity = 0.2 + depth01 * 0.8;
+
+            // clickable logic
             const isFront = i === frontIndex;
 
             return (
-
-              <div
+              <button
                 key={i}
+                type="button"
                 onClick={() => handleThumbnailClick(i)}
+                className="absolute left-1/2 top-1/2 transition-all duration-700 ease-out"
                 style={{
-                  transform: `rotateY(${angle}deg) translateZ(350px) scale(${isFront ? 1.1 : 0.9})`,
-                  zIndex: isFront ? 10 : 1
+                  transformStyle: "preserve-3d",
+                  transform: `translate(-50%, -50%) translate3d(${x}px, 0px, ${z}px) scale(${scale})`,
+                  opacity,
+                  zIndex: Math.round(depth01 * 1000),
+                  cursor: isFront ? "zoom-in" : "pointer",
                 }}
-                className="absolute w-[420px] cursor-pointer transition-transform duration-500"
               >
-
                 <img
                   src={thumb}
                   alt="thumbnail"
-                  className="rounded-xl shadow-xl hover:scale-105 transition"
+                  className="w-[400px] h-[225px] max-w-none rounded-2xl shadow-2xl select-none pointer-events-none object-cover"
+                  draggable={false}
                 />
-
-              </div>
-
+              </button>
             );
           })}
-
         </div>
-
       </div>
 
 
@@ -162,7 +175,7 @@ export default function ThumbnailCarousel() {
 
           <button
             onClick={prevImage}
-            className="absolute left-10 text-white text-5xl"
+            className="absolute left-10 text-white text-5xl cursor-pointer select-none"
           >
             ‹
           </button>
@@ -173,7 +186,8 @@ export default function ThumbnailCarousel() {
           <img
             src={thumbnails[activeIndex]}
             alt="thumbnail preview"
-            className="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl"
+            className="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl cursor-default select-none"
+            draggable={false}
           />
 
 
@@ -181,7 +195,7 @@ export default function ThumbnailCarousel() {
 
           <button
             onClick={nextImage}
-            className="absolute right-10 text-white text-5xl"
+            className="absolute right-10 text-white text-5xl cursor-pointer select-none"
           >
             ›
           </button>

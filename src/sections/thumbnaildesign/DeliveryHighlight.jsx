@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function DeliveryHighlight() {
   return (
-    <section className="py-24 px-6 bg-[#020617]">
+    <section className="py-8 px-6 bg-[#071028]">
 
       <div className="max-w-4xl mx-auto text-center">
 
