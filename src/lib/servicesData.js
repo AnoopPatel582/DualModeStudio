@@ -9,13 +9,13 @@ export const servicesData = [
       title: "Short-Form Video Editing",
       description:
         "Platform-native short content optimized for reach, hooks, and rapid audience growth.",
-      slug: "/services/short-form-video-editing",
+      slug: "/short-form-editing",
     },
     {
       title: "Thumbnail Designing",
       description:
         "CTR-optimized visual systems built to command attention and drive clicks.",
-      slug: "/services/thumbnail-designing",
+      slug: "/thumbnail-design",
     },
     {
       title: "Script Writing",

@@ -2,20 +2,19 @@
 
 import { motion } from "framer-motion";
 
-const videos = [
-  "https://www.youtube.com/embed/W1XFZLzRyZ4?si=KcEEVakhy4vwEk_q",
-  "https://www.youtube.com/embed/zvHJftkJrfA?si=F8KOs9tY78mYcvzq",
-  "https://www.youtube.com/embed/6SsIXjJctNU?si=FJioYKDMchfe4VGk",
-  "https://www.youtube.com/embed/9OLeeo3X1dc?si=PKDPdedPE3dJ9ARl",
-  "https://www.youtube.com/embed/IPn2WVt9YBc?si=XB4HCd5XRUsTWyPy",
-  "https://www.youtube.com/embed/bu9IhF6z1t4?si=0KQu1csX91CNoLx4",
+const shorts = [
+  "https://www.youtube.com/embed/sL4M04X0TMY?si=ZTobybCCMqhhHEC_",
+  "https://www.youtube.com/embed/_6dfdX93cqc?si=XPbSKhO9-eKxnsak",
+  "https://youtube.com/embed/GgYmHpy4wto?si=C1KgiBjC9oNqUB_K",
+  "https://youtube.com/embed/ZpUkbQ20jog?si=etHKLrld1TlxHX9G",
+  "https://youtube.com/embed/k67dRcw2K08?si=qzmkYCVo0FSkRE4D",
+  "https://youtube.com/embed/nXy7HSzmTzs?si=yyc2DifKcgvIDz2T",
 ];
 
-export default function LongFormWorks() {
+export default function ShortFormWorks() {
   return (
     <section className="py-20 px-6 bg-[#071028]">
 
-      {/* Section Heading */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +23,7 @@ export default function LongFormWorks() {
         className="text-center max-w-3xl mx-auto"
       >
         <h2 className="text-3xl md:text-4xl font-semibold">
-          Sample Long Form Works
+          Sample Short Form Works
         </h2>
 
         <p className="mt-4 text-gray-400">
@@ -33,10 +32,9 @@ export default function LongFormWorks() {
         </p>
       </motion.div>
 
-      {/* Video Grid */}
-      <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
 
-        {videos.map((video, index) => (
+        {shorts.map((video, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 60 }}
@@ -44,22 +42,20 @@ export default function LongFormWorks() {
             whileHover={{ y: -5 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="relative w-full overflow-hidden rounded-xl shadow-lg"
+            className="overflow-hidden rounded-xl "
           >
-            <div className="aspect-video">
+            <div className="aspect-[9/16]">
               <iframe
-                src={`${video}?autoplay=1&mute=1&controls=1`}
-                title="YouTube video player"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
+                src={`${video}?autoplay=1&mute=1`}
                 className="w-full h-full"
+                allow="autoplay"
+                allowFullScreen
               />
             </div>
           </motion.div>
         ))}
 
       </div>
-
     </section>
   );
 }

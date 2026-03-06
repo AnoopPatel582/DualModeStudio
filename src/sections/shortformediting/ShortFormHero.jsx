@@ -2,20 +2,19 @@
 
 import { motion } from "framer-motion";
 
-export default function LongFormHero() {
+export default function ShortFormHero() {
   return (
-    <section className="relative h-[80vh] w-full overflow-hidden mt-16">
+    <section className="relative h-[85vh] w-full overflow-hidden">
 
-      {/* Background Image */}
+      {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('long.avif')",
+          backgroundImage: "url('short.avif')",
         }}
       />
 
-      {/* Gradient Overlay */}
+      {/* Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/80 to-transparent" />
 
       {/* Content */}
@@ -26,10 +25,9 @@ export default function LongFormHero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
+            className="text-4xl md:text-6xl font-bold py-20"
           >
-            Premium Long-Form <br />
-            Video Editing Plans
+            Premium Short Video Editing Plans
           </motion.h1>
 
           <motion.p
@@ -38,15 +36,14 @@ export default function LongFormHero() {
             transition={{ duration: 0.9 }}
             className="mt-6 max-w-2xl text-gray-300 text-lg"
           >
-            Power your YouTube channel with cinematic, high-retention edits built
-            for every niche — documentaries, podcasts, gaming, business,
-            vlogs, and more. From precise cuts to full-scale storytelling,
-            our plans deliver premium quality and serious time savings.
+            Premium short-form video editing tailored for your brand. Perfect
+            for YouTube Shorts, Instagram Reels, and TikTok. Boost engagement,
+            scale faster, and stay on trend with cinematic cuts and viral-ready
+            storytelling.
           </motion.p>
 
         </div>
       </div>
-
     </section>
   );
 }
