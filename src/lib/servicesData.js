@@ -21,18 +21,18 @@ export const servicesData = [
       title: "Script Writing",
       description:
         "Strategic scripting aligned with audience psychology and retention mechanics.",
-      slug: "/services/script-writing",
+      slug: "/",
     },
     {
       title: "Channel Automation",
       description:
         "End-to-end production workflows designed for scalable content execution.",
-      slug: "/services/channel-automation",
+      slug: "/",
     },
     {
       title: "Advertisements",
       description:
         "Performance-driven ad creatives engineered for conversions and ROI.",
-      slug: "/services/advertisements",
+      slug: "/",
     },
   ];

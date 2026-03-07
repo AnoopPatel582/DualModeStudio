@@ -1,13 +1,13 @@
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
-import Hero from "@/sections/Hero";
-import HeroVideoSection from "@/sections/HeroVideoSection";
-import GrowthFrameworkSection from "@/sections/GrowthFrameworkSection";
-import AuthorityAndAdvantageSection from "@/sections/AuthorityAndAdvantageSection";
-import ExecutionCapabilitiesSection from "@/sections/ExecutionCapabilitiesSection";
-import FoundersSection from "@/sections/FoundersSection";
+import Hero from "@/sections/homepage/Hero";
+import HeroVideoSection from "@/sections/homepage/HeroVideoSection";
+import GrowthFrameworkSection from "@/sections/homepage/GrowthFrameworkSection";
+import AuthorityAndAdvantageSection from "@/sections/homepage/AuthorityAndAdvantageSection";
+import ExecutionCapabilitiesSection from "@/sections/homepage/ExecutionCapabilitiesSection";
+import FoundersSection from "@/sections/homepage/FoundersSection";
 import ContactPage from "@/app/contact/page";
-import MotionGraphicsSection from "@/sections/MotionGraphicsSection";
+import MotionGraphicsSection from "@/sections/homepage/MotionGraphicsSection";
 
 export default function Home() {
   return (
