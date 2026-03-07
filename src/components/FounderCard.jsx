@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaInstagram,FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 
 export default function FounderCard({ founder }) {
   return (
@@ -41,19 +43,35 @@ export default function FounderCard({ founder }) {
       </p>
 
       {/* Contact Links */}
-      <div className="mt-6 flex justify-center gap-4 text-sm text-white/50">
-        <Link href={founder.links.linkedin} className="hover:text-white">
-          LinkedIn
-        </Link>
-        <Link href={founder.links.instagram} className="hover:text-white">
-          Instagram
-        </Link>
-        <Link href={founder.links.x} className="hover:text-white">
-          X
-        </Link>
-        <Link href={founder.links.email} className="hover:text-white">
-          Email
-        </Link>
+      <div className="mt-6 flex justify-center gap-4 text-base text-white/50">
+      <a
+              href={founder.links.linkedin}
+              target="_blank"
+              className="text-gray-400 hover:text-blue-500 transition"
+            >
+              <FaLinkedin/>
+            </a>
+        <a
+              href={founder.links.instagram}
+              target="_blank"
+              className="text-gray-400 hover:text-pink-500 transition"
+            >
+              <FaInstagram />
+        </a>
+        <a
+              href={founder.links.x}
+              target="_blank"
+              className="text-gray-400 hover:text-white transition"
+            >
+              <FaXTwitter />
+            </a>
+            <a
+              href={founder.links.email}
+              target="_blank"
+              className="text-gray-500 hover:text-red-500 transition"
+            >
+              <SiGmail />
+            </a>
       </div>
     </div>
   );

@@ -67,15 +67,6 @@ export default function Footer() {
             >
               <FaInstagram />
             </a>
-
-            {/* <a
-              href="#"
-              target="_blank"
-              className="text-gray-400 hover:text-white transition"
-            >
-              <FaXTwitter />
-            </a> */}
-
           </div>
 
         </div>
