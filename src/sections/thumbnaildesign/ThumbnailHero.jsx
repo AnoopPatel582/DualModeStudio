@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 export default function ThumbnailHero() {
   return (
@@ -25,7 +26,7 @@ export default function ThumbnailHero() {
             initial={{ opacity:0, y:40 }}
             animate={{ opacity:1, y:0 }}
             transition={{ duration:0.7 }}
-            className="text-4xl md:text-6xl font-bold"
+            className={`${syne.className} text-4xl md:text-6xl font-bold py-4 leading-relaxed mt-16 tracking-wide`}
           >
             Create an <span className="text-yellow-400">Irresistible</span> YouTube
             Thumbnail for Your Video
@@ -35,7 +36,7 @@ export default function ThumbnailHero() {
             initial={{ opacity:0, y:40 }}
             animate={{ opacity:1, y:0 }}
             transition={{ duration:0.9 }}
-            className="mt-6 max-w-2xl text-gray-300 text-lg"
+            className="mt-6 max-w-2xl text-gray-300 text-lg tracking-wide leading-loose"
           >
             No matter your niche, our YouTube thumbnails are designed to stop
             the scroll and spark curiosity. Bold visuals, emotional cues, and

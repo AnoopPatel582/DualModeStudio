@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 export default function DeliveryHighlight() {
   return (
@@ -15,7 +16,7 @@ export default function DeliveryHighlight() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-semibold text-white relative inline-block"
+          className={`${syne.className} text-4xl md:text-5xl font-semibold text-white relative inline-block`}
         >
           Same Day Delivery
 

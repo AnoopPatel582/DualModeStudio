@@ -4,16 +4,32 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter();
+
+    const scrollToSection = (event, id) => {
+        event.preventDefault();
+        const el = document.getElementById(id);
+        if (el) {
+            const navOffset = 96; // approximate navbar height
+            const rect = el.getBoundingClientRect();
+            const targetY = rect.top + window.scrollY - navOffset;
+            window.scrollTo({ top: targetY, behavior: "smooth" });
+        } else {
+            router.push(`/#${id}`);
+        }
+    };
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
             <div className="max-w-7xl mx-auto px-4 md:px-8 h-18 flex items-center justify-between">
 
                 {/* 🔹 Logo */}
-                <Link href="/">
+                <Link href="/" onClick={(e) => scrollToSection(e, "hero")}>
                     <Image
                         src="/logo_title.png"
                         alt="DualModeStudio Logo"
@@ -25,17 +41,29 @@ export default function Navbar() {
 
                 {/* 🔹 Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-10 text-base font-normal">
-                    <Link href="#portfolio" className="hover:text-primary transition">
+                    <Link
+                        href="#portfolio"
+                        onClick={(e) => scrollToSection(e, "portfolio")}
+                        className="hover:text-primary transition"
+                    >
                         Portfolio
                     </Link>
-                    <Link href="#services" className="hover:text-primary transition">
+                    <Link
+                        href="#services"
+                        onClick={(e) => scrollToSection(e, "services")}
+                        className="hover:text-primary transition"
+                    >
                         Services
                     </Link>
-                    <Link href="#contact" className="hover:text-primary transition">
+                    <Link
+                        href="#contact"
+                        onClick={(e) => scrollToSection(e, "contact")}
+                        className="hover:text-primary transition"
+                    >
                         Contact
                     </Link>
                     <a
-                        href="https://wa.me/YOUR_NUMBER"
+                        href="https://wa.me/+918800946239"
                         target="_blank"
                         className="flex items-center gap-2 px-4 py-2 bg-primary text-black rounded-full hover:opacity-90 transition"
                     >
@@ -80,7 +108,10 @@ export default function Navbar() {
 
                             <Link
                                 href="#portfolio"
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    scrollToSection(e, "portfolio");
+                                    setIsOpen(false);
+                                }}
                                 className="hover:text-primary transition"
                             >
                                 Portfolio
@@ -88,7 +119,10 @@ export default function Navbar() {
 
                             <Link
                                 href="#services"
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    scrollToSection(e, "services");
+                                    setIsOpen(false);
+                                }}
                                 className="hover:text-primary transition"
                             >
                                 Services
@@ -96,7 +130,10 @@ export default function Navbar() {
 
                             <Link
                                 href="#contact"
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    scrollToSection(e, "contact");
+                                    setIsOpen(false);
+                                }}
                                 className="hover:text-primary transition"
                             >
                                 Contact

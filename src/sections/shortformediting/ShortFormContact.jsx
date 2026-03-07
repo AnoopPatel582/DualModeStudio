@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 export default function ServiceContact() {
   return (
@@ -14,7 +15,7 @@ export default function ServiceContact() {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-semibold`}>
           Start Your Next Video Project
         </h2>
 
@@ -79,7 +80,7 @@ export default function ServiceContact() {
         {/* Button */}
         <button
           type="submit"
-          className="mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors font-medium"
+          className="mt-6 px-8 py-3 bg-primary hover:bg-blue-500 text-black rounded-lg transition-colors font-medium"
         >
           Send Message
         </button>

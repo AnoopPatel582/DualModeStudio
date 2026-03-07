@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { syne } from "@/app/fonts";
 
 const thumbnails = [
   "/thumb1.png",
@@ -76,13 +77,13 @@ export default function ThumbnailCarousel() {
 
   return (
 
-    <section className="py-24 overflow-hidden">
+    <section id="portfolio" className="py-24 overflow-hidden">
 
       {/* Section Heading */}
 
       <div className="text-center mb-16">
 
-        <h2 className="text-3xl md:text-4xl font-semibold">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-semibold`}>
           CTR Thumbnail Designs
         </h2>
 

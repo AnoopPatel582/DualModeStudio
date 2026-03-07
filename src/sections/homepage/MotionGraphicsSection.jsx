@@ -4,17 +4,18 @@ import { useState } from "react";
 import { worksData } from "@/lib/worksData";
 import WorkCard from "@/components/WorkCard";
 import VideoModal from "@/components/VideoModal";
+import { syne } from "@/app/fonts";
 
 export default function MotionGraphicsSection() {
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
-    <section className="py-16">
+    <section id="portfolio" className="py-16">
       <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white">
+          <h2 className={`${syne.className} text-4xl md:text-5xl font-semibold text-white`}>
             Motion Graphics Works
           </h2>
 

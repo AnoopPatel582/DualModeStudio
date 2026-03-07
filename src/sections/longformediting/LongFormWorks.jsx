@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 const videos = [
   "https://www.youtube.com/embed/W1XFZLzRyZ4?si=KcEEVakhy4vwEk_q",
@@ -13,7 +14,7 @@ const videos = [
 
 export default function LongFormWorks() {
   return (
-    <section className="py-20 px-6 bg-[#071028]">
+    <section id="portfolio" className="py-20 px-6 bg-[#071028]">
 
       {/* Section Heading */}
       <motion.div
@@ -23,7 +24,7 @@ export default function LongFormWorks() {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-semibold`}>
           Sample Long Form Works
         </h2>
 

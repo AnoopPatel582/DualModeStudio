@@ -1,3 +1,5 @@
+import { syne } from "@/app/fonts";
+
 export default function AuthorityAndAdvantageSection() {
     return (
       <section className="relative w-full py-16">
@@ -5,7 +7,7 @@ export default function AuthorityAndAdvantageSection() {
           
           {/* ================= Authority Statement ================= */}
           <div className="mx-auto max-w-[1100px] text-center">
-            <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className={`${syne.className} text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl`}>
               We don’t just produce content.
               <br />
               We engineer performance.
@@ -28,7 +30,7 @@ export default function AuthorityAndAdvantageSection() {
           {/* ================= The DualMode Advantage ================= */}
           <div className="mt-16">
             <div className="mb-16 text-center">
-              <h3 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+              <h3 className={`${syne.className} text-3xl font-semibold tracking-tight text-white md:text-4xl`}>
                 The DualMode Advantage
               </h3>
             </div>

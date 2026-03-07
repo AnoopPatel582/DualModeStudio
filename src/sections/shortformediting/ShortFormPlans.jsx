@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 const plans = [
   {
@@ -43,7 +44,7 @@ const plans = [
 
 export default function ShortFormPlans() {
   return (
-    <section className="py-16 px-6 bg-[#071028]">
+    <section id="services" className="py-16 px-6 bg-[#071028]">
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -52,7 +53,7 @@ export default function ShortFormPlans() {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-semibold`}>
           DualMode Service Plans
         </h2>
       </motion.div>
@@ -83,7 +84,7 @@ export default function ShortFormPlans() {
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="mt-8 w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition"
+              className="mt-8 w-full py-3 rounded-lg bg-primary text-black hover:bg-blue-500 transition"
             >
               Get Started
             </button>

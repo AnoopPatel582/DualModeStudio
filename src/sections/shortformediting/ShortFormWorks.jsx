@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 const shorts = [
   "https://www.youtube.com/embed/sL4M04X0TMY?si=ZTobybCCMqhhHEC_",
@@ -13,7 +14,7 @@ const shorts = [
 
 export default function ShortFormWorks() {
   return (
-    <section className="py-20 px-6 bg-[#071028]">
+    <section id="portfolio" className="py-20 px-6 bg-[#071028]">
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -22,7 +23,7 @@ export default function ShortFormWorks() {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-semibold`}>
           Sample Short Form Works
         </h2>
 

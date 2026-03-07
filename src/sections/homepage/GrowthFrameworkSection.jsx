@@ -1,5 +1,6 @@
 import FrameworkPillar from "@/components/FrameworkPillar";
 import { frameworkData } from "@/lib/frameworkData";
+import { syne } from "@/app/fonts";
 
 export default function GrowthFrameworkSection() {
   return (
@@ -8,7 +9,7 @@ export default function GrowthFrameworkSection() {
         
         {/* Section Header */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <h2 className={`${syne.className} text-4xl font-semibold tracking-tight text-white md:text-5xl`}>
             The DualMode Growth Framework
           </h2>
           <p className="mt-6 text-lg text-white/60">

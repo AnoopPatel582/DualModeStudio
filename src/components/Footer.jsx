@@ -1,143 +1,96 @@
-import Link from "next/link";
-import { servicesData } from "@/lib/servicesData";
+"use client";
+
 import Image from "next/image";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-white/10 py-8">
-      <div className="mx-auto max-w-[1400px] px-6">
+    <footer className="bg-[#0a0a0a] border-t border-white/10 text-white">
 
-        {/* Top Grid */}
-        <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
+      {/* Top Section */}
 
-          {/* Column 1 — Brand */}
-          <div>
-            <div className=" p-0 m-0">
-              <Link href="/">
-                <Image
-                  src="/logo_title.png"
-                  alt="DualModeStudio Logo"
-                  width={300}
-                  height={100}
-                  priority
-                />
-              </Link>
-            </div>
-            <p className="mt-4 text-white/60 leading-relaxed">
-              Performance-driven YouTube growth systems engineered for scale.
-            </p>
+      <div className="flex flex-col md:flex-row md:justify-around items-center md:items-start gap-12 px-6">
 
-            <div className="mt-6 space-y-2 text-white/70">
-              <p>business@dualmostudio.com</p>
-              <p>Operating remotely worldwide.</p>
-            </div>
-          </div>
+        {/* Left Block */}
 
-          {/* Column 2 — Navigation */}
-          <div>
-            <h4 className="mb-4 text-sm uppercase tracking-wider text-white/50">
-              Navigation
-            </h4>
-            <ul className="space-y-3 text-white/70">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/#growth-framework" className="hover:text-white transition-colors">
-                  Growth Framework
-                </Link>
-              </li>
-              <li>
-                <Link href="/#execution-capabilities" className="hover:text-white transition-colors">
-                  Execution Capabilities
-                </Link>
-              </li>
-              <li>
-                <Link href="/case-studies" className="hover:text-white transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="max-w-sm text-center md:text-left">
 
-          {/* Column 3 — Capabilities */}
-          <div>
-            <h4 className="mb-4 text-sm uppercase tracking-wider text-white/50">
-              Capabilities
-            </h4>
-            <ul className="space-y-3 text-white/70">
-              {servicesData.map((service) => (
-                <li key={service.title}>
-                  <Link
-                    href={service.slug}
-                    className="hover:text-white transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Image
+            src="/logo_title.png"
+            alt="DualMode Studio"
+            width={300}
+            height={100}
+            
+          />
 
-          {/* Column 4 — Legal */}
-          <div>
-            <h4 className="mb-4 text-sm uppercase tracking-wider text-white/50">
-              Legal
-            </h4>
-            <ul className="space-y-3 text-white/70">
-              <li>
-                <Link href="/privacy-policy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/accessibility" className="hover:text-white transition-colors">
-                  Accessibility Statement
-                </Link>
-              </li>
-              <li>
-                <Link href="/refund-policy" className="hover:text-white transition-colors">
-                  Refund Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <p className="text-gray-400 leading-relaxed ml-6">
+            Performance-driven YouTube growth systems engineered for scale.
+          </p>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} DualMode Studio. All rights reserved.
+
+        {/* Right Block */}
+
+        <div className="text-center md:text-left mt-12">
+
+          <p className="text-gray-300 mb-2">
+            <a
+              href="mailto:business@dualmodestudio.com"
+              className="hover:text-blue-400 transition"
+            >
+              business@dualmodestudio.com
+            </a>
           </p>
 
-          {/* Social Icons (minimal text placeholders for now) */}
-          <div className="flex items-center gap-6 text-white/50">
-            <Link href="#" className="hover:text-white transition-colors">
-              LinkedIn
-            </Link>
-            <Link href="#" className="hover:text-white transition-colors">
-              Instagram
-            </Link>
-            <Link href="#" className="hover:text-white transition-colors">
-              X
-            </Link>
+          <p className="text-gray-400 mb-4">
+            Operating remotely worldwide.
+          </p>
+
+
+          {/* Social Icons */}
+
+          <div className="flex justify-center md:justify-start gap-5 text-xl">
+
+            <a
+              href="https://wa.me/message/THW73AALQP6HB1"
+              target="_blank"
+              className="text-gray-400 hover:text-green-500 transition"
+            >
+              <FaWhatsapp />
+            </a>
+
+            <a
+              href="https://www.instagram.com/bydualmodestudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              className="text-gray-400 hover:text-pink-500 transition"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* <a
+              href="#"
+              target="_blank"
+              className="text-gray-400 hover:text-white transition"
+            >
+              <FaXTwitter />
+            </a> */}
+
           </div>
+
         </div>
 
       </div>
+
+
+      {/* Bottom Strip */}
+
+      <div className="border-t border-gray-800 mt-12 py-6 text-center text-gray-500 text-sm">
+
+        © {new Date().getFullYear()} DualMode Studio. All rights reserved.
+
+      </div>
+
     </footer>
   );
 }

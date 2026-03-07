@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 const plans = [
   {
@@ -26,7 +27,7 @@ const plans = [
 
 export default function ThumbnailPlans() {
   return (
-    <section className="py-24 px-6 bg-[#071028]">
+    <section id="services" className="py-24 px-6 bg-[#071028]">
 
       {/* Heading */}
 
@@ -37,7 +38,7 @@ export default function ThumbnailPlans() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold text-white">
+        <h2 className={`${syne.className} text-3xl md:text-4xl font-semibold text-white`}>
           DualMode Service Plans
         </h2>
       </motion.div>
@@ -55,11 +56,11 @@ export default function ThumbnailPlans() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className={`rounded-2xl p-8 text-center transition-all duration-300
+            className={`rounded-2xl p-8 text-center transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:-translate-y-2
               
               ${plan.highlight
-                ? "bg-white text-black shadow-2xl scale-105"
-                : "bg-white/90 text-black shadow-xl hover:-translate-y-2"
+                ? "bg-[#0b1736] text-white shadow-2xl scale-105"
+                : "bg-[#0b1736] text-white shadow-xl hover:-translate-y-2"
               }
               
             `}
@@ -81,7 +82,7 @@ export default function ThumbnailPlans() {
 
             {/* Description */}
 
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed">
               {plan.description}
             </p>
 
@@ -97,8 +98,8 @@ export default function ThumbnailPlans() {
               className={`mt-8 w-full py-3 rounded-lg font-medium transition
               
               ${plan.highlight
-                ? "bg-black text-white hover:bg-gray-800"
-                : "bg-[#071028] text-white hover:bg-[#0f1f4a]"
+                ? "bg-primary text-black hover:bg-blue-500"
+                : "bg-primary text-black hover:bg-blue-500"
               }
               
               `}

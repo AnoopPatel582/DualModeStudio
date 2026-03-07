@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { syne } from "@/app/fonts";
 
 export default function LongFormHero() {
   return (
@@ -26,7 +27,7 @@ export default function LongFormHero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
+            className={`${syne.className} text-4xl md:text-6xl font-bold leading-tight`}
           >
             Premium Long-Form <br />
             Video Editing Plans
@@ -36,7 +37,7 @@ export default function LongFormHero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="mt-6 max-w-2xl text-gray-300 text-lg"
+            className="mt-6 max-w-2xl text-gray-300 text-lg tracking-wide leading-loose"
           >
             Power your YouTube channel with cinematic, high-retention edits built
             for every niche — documentaries, podcasts, gaming, business,

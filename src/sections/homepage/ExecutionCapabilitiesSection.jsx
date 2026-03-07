@@ -1,14 +1,15 @@
 import { servicesData } from "@/lib/servicesData";
 import CapabilityCard from "@/components/CapabilityCard";
+import { syne } from "@/app/fonts";
 
 export default function ExecutionCapabilitiesSection() {
   return (
-    <section className="relative w-full py-8">
+    <section id="services" className="relative w-full py-8">
       <div className="mx-auto max-w-[1400px] px-6">
         
         {/* Section Header */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <h2 className={`${syne.className} text-4xl font-semibold tracking-tight text-white md:text-5xl`}>
             Execution Capabilities
           </h2>
           <p className="mt-6 text-lg text-white/60">

@@ -16,7 +16,10 @@ function splitWords(text) {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 md:pt-40 overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 md:pt-40 overflow-hidden"
+    >
       {/* Background video with reduced opacity */}
       <div className="absolute inset-0 z-0">
         <video
@@ -24,7 +27,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
           <source src={HERO_BG_VIDEO_URL} type="video/mp4" />
         </video>
