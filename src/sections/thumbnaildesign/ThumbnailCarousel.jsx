@@ -2,15 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { syne } from "@/app/fonts";
-
-const thumbnails = [
-  "/thumb1.png",
-  "/thumb2.png",
-  "/thumb3.png",
-  "/thumb4.jpeg",
-  "/thumb5.png",
-  "/thumb6.png",
-];
+import { thumbnailWorksData } from "@/lib/thumbnailWorksData";
 
 export default function ThumbnailCarousel() {
 
@@ -18,7 +10,7 @@ export default function ThumbnailCarousel() {
   const [paused, setPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const total = thumbnails.length;
+  const total = thumbnailWorksData.length;
   const angleStep = 360 / total;
 
   // Detect which thumbnail is currently in front
@@ -61,12 +53,12 @@ export default function ThumbnailCarousel() {
 
   // Modal navigation
   const nextImage = () => {
-    setActiveIndex((prev) => (prev + 1) % thumbnails.length);
+    setActiveIndex((prev) => (prev + 1) % thumbnailWorksData.length);
   };
 
   const prevImage = () => {
     setActiveIndex((prev) =>
-      prev === 0 ? thumbnails.length - 1 : prev - 1
+      prev === 0 ? thumbnailWorksData.length - 1 : prev - 1
     );
   };
 
@@ -110,7 +102,7 @@ export default function ThumbnailCarousel() {
             transform: "rotateX(-10deg)",
           }}
         >
-          {thumbnails.map((thumb, i) => {
+          {thumbnailWorksData.map((thumb, i) => {
             // orbit angle for this item
             const a = i * angleStep - rotation;
             const rad = (a * Math.PI) / 180;
@@ -137,7 +129,7 @@ export default function ThumbnailCarousel() {
                 style={{
                   transformStyle: "preserve-3d",
                   transform: `translate(-50%, -50%) translate3d(${x}px, 0px, ${z}px) scale(${scale})`,
-                  opacity,
+                  opacity: opacity.toFixed(2),
                   zIndex: Math.round(depth01 * 1000),
                   cursor: isFront ? "zoom-in" : "pointer",
                 }}
@@ -185,7 +177,7 @@ export default function ThumbnailCarousel() {
           {/* Image */}
 
           <img
-            src={thumbnails[activeIndex]}
+            src={thumbnailWorksData[activeIndex]}
             alt="thumbnail preview"
             className="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl cursor-default select-none"
             draggable={false}

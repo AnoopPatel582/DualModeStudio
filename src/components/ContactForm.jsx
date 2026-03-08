@@ -79,7 +79,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 w-full rounded-lg bg-primary text-black py-3 font-medium hover:bg-blue-500 transition"
+        className="mt-8 w-full rounded-lg bg-primary text-black py-3 font-medium hover:bg-blue-500 transition cursor-pointer"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>

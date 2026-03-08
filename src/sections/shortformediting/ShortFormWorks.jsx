@@ -2,15 +2,7 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-
-const shorts = [
-  "https://www.youtube.com/embed/sL4M04X0TMY?si=ZTobybCCMqhhHEC_",
-  "https://www.youtube.com/embed/_6dfdX93cqc?si=XPbSKhO9-eKxnsak",
-  "https://youtube.com/embed/GgYmHpy4wto?si=C1KgiBjC9oNqUB_K",
-  "https://youtube.com/embed/ZpUkbQ20jog?si=etHKLrld1TlxHX9G",
-  "https://youtube.com/embed/k67dRcw2K08?si=qzmkYCVo0FSkRE4D",
-  "https://youtube.com/embed/nXy7HSzmTzs?si=yyc2DifKcgvIDz2T",
-];
+import { shortFormWorksData } from "@/lib/shortFormWorksData";
 
 export default function ShortFormWorks() {
   return (
@@ -35,7 +27,7 @@ export default function ShortFormWorks() {
 
       <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
 
-        {shorts.map((video, index) => (
+        {shortFormWorksData.map((video, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 60 }}

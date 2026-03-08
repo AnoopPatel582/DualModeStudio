@@ -2,57 +2,7 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-
-const plans = [
-    {
-        title: "Essential Plan",
-        subtitle: "Up to 8 min video",
-        price: "$100 / video",
-        features: [
-            "Talking head videos",
-            "Business explainers",
-            "Basic cuts & transitions",
-            "Color correction",
-            "3–5 day turnaround",
-        ],
-    },
-    {
-        title: "Creator Growth",
-        subtitle: "Up to 15 min video",
-        price: "$240 / video",
-        features: [
-            "Story-driven editing",
-            "B-roll & stock footage",
-            "Sound effects",
-            "Motion titles",
-            "3–4 day turnaround",
-        ],
-    },
-    {
-        title: "Cinematic Plan",
-        subtitle: "Up to 25 min video",
-        price: "$300 / video",
-        features: [
-            "Cinematic storytelling",
-            "Advanced transitions",
-            "Dynamic motion graphics",
-            "Sound design",
-            "Priority delivery",
-        ],
-    },
-    {
-        title: "Custom Category",
-        subtitle: "Advanced edits",
-        price: "$500 / video",
-        features: [
-            "Documentaries",
-            "Podcast editing",
-            "Gaming content",
-            "YouTube series",
-            "Fully custom workflow",
-        ],
-    },
-];
+import { longFormPlansData } from "@/lib/longFormPlansData";
 
 export default function ServicePlans() {
     return (
@@ -79,7 +29,7 @@ export default function ServicePlans() {
             {/* Pricing Cards */}
             <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
 
-                {plans.map((plan, index) => (
+                {longFormPlansData.map((plan, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 60 }}
@@ -104,7 +54,7 @@ export default function ServicePlans() {
                             onClick={() =>
                                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                             }
-                            className="mt-8 w-full py-3 rounded-lg bg-primary hover:bg-blue-500 text-black transition-colors font-medium"
+                            className="mt-8 w-full py-3 rounded-lg bg-primary hover:bg-blue-500 text-black transition-colors font-medium cursor-pointer"
                         >
                             Get Started
                         </button>

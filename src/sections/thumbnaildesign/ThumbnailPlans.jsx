@@ -2,28 +2,7 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-
-const plans = [
-  {
-    title: "Basic",
-    price: "$5",
-    description:
-      "Professional thumbnail design for YouTube videos. Clean layout and attention-grabbing visuals.",
-  },
-  {
-    title: "Standard",
-    price: "$15",
-    description:
-      "Premium thumbnail design with advanced composition, expressive elements and stronger CTR potential.",
-    highlight: true,
-  },
-  {
-    title: "Premium",
-    price: "$20",
-    description:
-      "Fully custom high-converting thumbnail with detailed design and maximum visual impact.",
-  },
-];
+import { thumbnailPlansData } from "@/lib/thumbnailPlansData";
 
 export default function ThumbnailPlans() {
   return (
@@ -48,7 +27,7 @@ export default function ThumbnailPlans() {
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
 
-        {plans.map((plan, index) => (
+        {thumbnailPlansData.map((plan, index) => (
 
           <motion.div
             key={index}
@@ -95,7 +74,7 @@ export default function ThumbnailPlans() {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className={`mt-8 w-full py-3 rounded-lg font-medium transition
+              className={`mt-8 w-full py-3 rounded-lg font-medium transition cursor-pointer
               
               ${plan.highlight
                 ? "bg-primary text-black hover:bg-blue-500"

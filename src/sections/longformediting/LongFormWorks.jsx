@@ -2,15 +2,7 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-
-const videos = [
-  "https://www.youtube.com/embed/W1XFZLzRyZ4?si=KcEEVakhy4vwEk_q",
-  "https://www.youtube.com/embed/zvHJftkJrfA?si=F8KOs9tY78mYcvzq",
-  "https://www.youtube.com/embed/6SsIXjJctNU?si=FJioYKDMchfe4VGk",
-  "https://www.youtube.com/embed/9OLeeo3X1dc?si=PKDPdedPE3dJ9ARl",
-  "https://www.youtube.com/embed/IPn2WVt9YBc?si=XB4HCd5XRUsTWyPy",
-  "https://www.youtube.com/embed/bu9IhF6z1t4?si=0KQu1csX91CNoLx4",
-];
+import { longFormWorksData } from "@/lib/longFormWorksData";
 
 export default function LongFormWorks() {
   return (
@@ -37,7 +29,7 @@ export default function LongFormWorks() {
       {/* Video Grid */}
       <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
 
-        {videos.map((video, index) => (
+        {longFormWorksData.map((video, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 60 }}

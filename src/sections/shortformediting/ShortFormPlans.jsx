@@ -2,45 +2,7 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-
-const plans = [
-  {
-    title: "Pay-Per-Reel",
-    price: "$20 / reel",
-    features: [
-      "Up to 60 sec",
-      "Delivery within 24 hours",
-      "2 minor revisions",
-    ],
-  },
-  {
-    title: "Momentum Plan",
-    price: "$240 / month",
-    features: [
-      "12 reels/month",
-      "Priority turnaround",
-      "3 revisions/reel",
-    ],
-  },
-  {
-    title: "Scale Plan",
-    price: "$550 / month",
-    features: [
-      "Up to 30 reels",
-      "Unlimited revisions",
-      "Thumbnail + caption suggestions",
-    ],
-  },
-  {
-    title: "Unlimited Plan",
-    price: "$750 / month",
-    features: [
-      "Unlimited video submissions",
-      "Dedicated editor",
-      "Same-day edits possible",
-    ],
-  },
-];
+import { shortFormPlansData } from "@/lib/shortFormPlansData";
 
 export default function ShortFormPlans() {
   return (
@@ -60,7 +22,7 @@ export default function ShortFormPlans() {
 
       <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
 
-        {plans.map((plan, index) => (
+        {shortFormPlansData.map((plan, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 60 }}
@@ -84,7 +46,7 @@ export default function ShortFormPlans() {
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="mt-8 w-full py-3 rounded-lg bg-primary text-black hover:bg-blue-500 transition"
+              className="mt-8 w-full py-3 rounded-lg bg-primary text-black hover:bg-blue-500 transition cursor-pointer"
             >
               Get Started
             </button>
