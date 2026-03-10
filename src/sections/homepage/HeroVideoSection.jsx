@@ -5,7 +5,7 @@ import AdaptiveVideo from "@/components/AdaptiveVideo";
 
 export default function HeroVideoSection() {
   return (
-    <section className="relative py-16 px-6 bg-black">
+    <section className="relative py-8 px-6 bg-black">
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
         {/* Video */}
         <motion.div

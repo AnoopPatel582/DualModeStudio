@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 md:pt-40 overflow-hidden"
+      className="relative min-h-[70vh] flex justify-center text-center px-6 pt-32 md:pt-32 lg:pt-36 overflow-hidden"
     >
       {/* Background video with reduced opacity */}
       <div className="absolute inset-0 z-0">
@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Main Heading */}
         <motion.h1
-          className={`${syne.className} font-bold text-[48px] md:text-[72px] lg:text-[96px] leading-normal md:whitespace-nowrap`}
+          className={`${syne.className} font-bold text-[48px] md:text-[72px] lg:text-[100px] leading-normal md:whitespace-nowrap`}
           initial="hidden"
           animate="visible"
           variants={{
@@ -67,7 +67,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <motion.h2
-          className={`${syne.className} font-bold mt-6 text-[18px] md:text-[24px] lg:text-[30px]`}
+          className={`${syne.className} font-bold mt-6 text-[18px] md:text-[24px] lg:text-[30px] leading-normal`}
           initial="hidden"
           animate="visible"
           variants={{
@@ -97,7 +97,7 @@ export default function Hero() {
 
         {/* Paragraph */}
         <motion.p
-          className="mt-8 text-[16px] md:text-[18px] lg:text-[20px] leading-[28px] md:leading-[32px] lg:leading-[34px] max-w-2xl mx-auto text-white/80"
+          className="mt-8 text-[14px] md:text-[16px] lg:text-[18px] max-w-2xl tracking-tight lg:max-w-4xl mx-auto text-white/80 leading-[28px] md:leading-[32px] lg:leading-[34px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.6 }}
