@@ -32,3 +32,35 @@ body {
 .blue-glow {
   box-shadow: 0 0 60px rgba(0, 153, 255, 0.6);
 }
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderSpin {
+  to { --angle: 360deg; }
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),       /* ← key change */
+    transparent 0deg,
+    transparent 300deg,
+    rgba(255, 255, 255, 0.9) 330deg,
+    transparent 360deg
+  );
+  animation: borderSpin 4s linear infinite;  /* ← animates --angle, not transform */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+} 
