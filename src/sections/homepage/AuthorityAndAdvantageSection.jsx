@@ -1,76 +1,67 @@
 import { syne } from "@/app/fonts";
 
+const reasons = [
+  {
+    number: "01",
+    title: "YouTube-First Focus",
+    description:
+      "No distractions – we eat, sleep, and breathe platform trends.",
+  },
+  {
+    number: "02",
+    title: "Proven Frameworks",
+    description:
+      "Tactics refined across 500+ videos in niches from tech to lifestyle.",
+  },
+  {
+    number: "03",
+    title: "Transparent Tracking",
+    description: "Real-time dashboards for every metric that matters.",
+  },
+];
+
 export default function AuthorityAndAdvantageSection() {
-    return (
-      <section className="relative w-full py-16">
-        <div className="mx-auto max-w-[1200px] px-6">
-          
-          {/* ================= Authority Statement ================= */}
-          <div className="mx-auto max-w-[1100px] text-center">
-            <h2 className={`${syne.className} text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl`}>
-              We don’t just produce content.
-              <br />
-              We engineer performance.
-            </h2>
-  
-            <p className="mt-10 text-xl leading-relaxed text-white/70 md:text-2xl">
-              Every strategy is intentional.
-              <br />
-              Every frame is optimized.
-              <br />
-              Every decision is backed by data.
-              <br />
-              <br />
-              This isn’t content creation.
-              <br />
-              It’s channel architecture.
-            </p>
-          </div>
-  
-          {/* ================= The DualMode Advantage ================= */}
-          <div className="mt-16">
-            <div className="mb-16 text-center">
-              <h3 className={`${syne.className} text-3xl font-semibold tracking-tight text-white md:text-4xl`}>
-                The DualMode Advantage
-              </h3>
-            </div>
-  
-            <div className="grid gap-16 md:grid-cols-3">
-              
-              <div>
-                <h4 className="mb-4 text-xl font-semibold text-white">
-                  Data-Driven Execution
-                </h4>
-                <p className="text-white/60 leading-relaxed">
-                  We don’t rely on assumptions. Every strategy is tested,
-                  measured, and continuously refined for measurable performance.
-                </p>
-              </div>
-  
-              <div>
-                <h4 className="mb-4 text-xl font-semibold text-white">
-                  Scalable Systems
-                </h4>
-                <p className="text-white/60 leading-relaxed">
-                  Structured production and optimization workflows designed to
-                  scale beyond individual uploads and sustain long-term growth.
-                </p>
-              </div>
-  
-              <div>
-                <h4 className="mb-4 text-xl font-semibold text-white">
-                  Long-Term Growth Architecture
-                </h4>
-                <p className="text-white/60 leading-relaxed">
-                  We focus on sustainable brand expansion and revenue scalability
-                  — not short-term viral spikes.
-                </p>
-              </div>
-  
-            </div>
-          </div>
-  
+  return (
+    <section className="relative w-full py-16">
+      <div className="mx-auto max-w-[1200px] px-6">
+
+        {/* ================= Section Heading ================= */}
+        <div className="mx-auto max-w-[700px] text-center">
+          <h2
+            className={`${syne.className} text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl`}
+          >
+            Why partner with us?
+          </h2>
         </div>
-      </section>
-    );
-  }
+
+        {/* ================= Stacked Cards ================= */}
+        <div className="mx-auto mt-16 flex max-w-[700px] flex-col gap-4">
+          {reasons.map((reason) => (
+            <div
+              key={reason.number}
+              className="flex items-start gap-6 rounded-2xl border border-white/10 bg-white/5 px-8 py-7"
+            >
+              {/* Number */}
+              <span
+                className=" mt-1 shrink-0 text-2xl font-semibold text-white/30"
+              >
+                {reason.number}
+              </span>
+
+              {/* Content */}
+              <div>
+                <h4 className="text-lg font-semibold text-white">
+                  {reason.title}
+                </h4>
+                <p className="mt-2 leading-relaxed text-white/60">
+                  {reason.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
