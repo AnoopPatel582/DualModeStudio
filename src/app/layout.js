@@ -3,7 +3,7 @@ import { inter, syne } from "./fonts";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "DualModeStudio",
+  title: "DualMode Studio | Video Editing Services",
   description: "Creative production agency delivering powerful digital experiences.",
 };
 

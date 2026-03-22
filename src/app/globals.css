@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
 
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --primary: #0099FF;
+  --primary: hsl(204, 100%, 50%);
 }
 
 @theme inline {
@@ -11,6 +12,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
 }
+* { scrollbar-width: none; }
 
 html {
   scroll-behavior: smooth;

@@ -34,7 +34,7 @@ export default function HeroVideoSection() {
               2px 6px 28px rgba(180,210,255,0.12),
               -1px 2px 12px rgba(180,210,255,0.08)
             `,
-            border: "1px solid rgba(200,210,225,0.5)",
+            border: "2px solid rgba(200,210,225,0.5)",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.boxShadow = `

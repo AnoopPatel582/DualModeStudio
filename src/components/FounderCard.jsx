@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { FaInstagram,FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
+// import { SiGmail } from "react-icons/si";
 
 export default function FounderCard({ founder }) {
   return (
@@ -65,13 +64,13 @@ export default function FounderCard({ founder }) {
             >
               <FaXTwitter />
             </a>
-            <a
+            {/* <a
               href={founder.links.email}
               target="_blank"
               className="text-gray-500 hover:text-red-500 transition"
             >
               <SiGmail />
-            </a>
+            </a> */}
       </div>
     </div>
   );
