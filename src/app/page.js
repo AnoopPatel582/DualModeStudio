@@ -3,8 +3,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import Hero from "@/sections/homepage/Hero";
 import HeroVideoSection from "@/sections/homepage/HeroVideoSection";
 import GrowthFrameworkSection from "@/sections/homepage/GrowthFrameworkSection";
+import TrustSection from "@/sections/homepage/TrustSection";
 import AuthorityAndAdvantageSection from "@/sections/homepage/AuthorityAndAdvantageSection";
-import ExecutionCapabilitiesSection from "@/sections/homepage/ExecutionCapabilitiesSection";
+// import ExecutionCapabilitiesSection from "@/sections/homepage/ExecutionCapabilitiesSection";
 import FoundersSection from "@/sections/homepage/FoundersSection";
 import ContactPage from "@/app/contact/page";
 import MotionGraphicsSection from "@/sections/homepage/MotionGraphicsSection";
@@ -24,8 +25,11 @@ export default function Home() {
         <AuthorityAndAdvantageSection />
       </ScrollReveal>
       <ScrollReveal>
-        <ExecutionCapabilitiesSection />
+        <TrustSection/>
       </ScrollReveal>
+      {/* <ScrollReveal>
+        <ExecutionCapabilitiesSection />
+      </ScrollReveal> */}
       <ScrollReveal>
         <MotionGraphicsSection />
       </ScrollReveal>

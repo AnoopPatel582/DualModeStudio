@@ -4,7 +4,7 @@ import { syne } from "@/app/fonts";
 
 export default function FoundersSection() {
   return (
-    <section id="contact" className="py-16">
+    <section id="contact" className="py-8">
       <div className="mx-auto max-w-[1200px] px-6">
         
         {/* Header */}
