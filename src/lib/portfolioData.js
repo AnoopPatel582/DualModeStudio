@@ -70,32 +70,32 @@ export const portfolioData = [
       category: "Short Form Video",
     },
     {
-      title: "The Truth Exposed: They Are Already Here!",
+      title: "Alien/UFO",
       video: "/thumb1.png",
       category: "Thumbnails",
     },
     {
-      title: "Construction Chaos: Top 10 Most Expensive Heavy Machinery Fails",
+      title: "Construction Accident",
       video: "/thumb2.png",
       category: "Thumbnails",
     },
     {
-      title: "Castor Oil and Honey: The Shocking Health Secret You Need to Know",
+      title: "Castor Oil vs. Honey",
       video: "/thumb3.png",
       category: "Thumbnails",
     },
     {
-      title: "Breaking News: The Shocking Truth Behind Nicki Minaj's Latest Arrest",
+      title: "Celebrity Mugshot",
       video: "/thumb4.jpeg",
       category: "Thumbnails",
     },
     {
-      title: "The Banned Remedy: Why 'They' Want This Kept a Secret",
+      title: "Censored Secret",
       video: "/thumb5.png",
       category: "Thumbnails",
     },
     {
-      title: "Who is Really Controlling the Crypto Market? The Bitcoin Mastermind Revealed",
+      title: "Bitcoin Puppeteer",
       video: "/thumb6.png",
       category: "Thumbnails",
     },
