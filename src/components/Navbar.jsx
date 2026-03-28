@@ -42,15 +42,14 @@ export default function Navbar() {
                 {/* 🔹 Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-10 text-base font-normal">
                     <Link
-                        href="#portfolio"
-                        onClick={(e) => scrollToSection(e, "portfolio")}
+                        href="/portfolio"
                         className="hover:text-primary transition"
                     >
                         Portfolio
                     </Link>
                     <Link
-                        href="#services"
-                        onClick={(e) => scrollToSection(e, "services")}
+                        href="#motion-graphics"
+                        onClick={(e) => scrollToSection(e, "motion-graphics")}
                         className="hover:text-primary transition"
                     >
                         Services
@@ -107,20 +106,17 @@ export default function Navbar() {
                         <div className="flex flex-col items-center justify-center space-y-6 py-8 text-lg font-medium">
 
                             <Link
-                                href="#portfolio"
-                                onClick={(e) => {
-                                    scrollToSection(e, "portfolio");
-                                    setIsOpen(false);
-                                }}
+                                href="/portfolio"
+                                onClick={() => setIsOpen(false)}
                                 className="hover:text-primary transition"
                             >
                                 Portfolio
                             </Link>
 
                             <Link
-                                href="#services"
+                                href="#motion-graphics"
                                 onClick={(e) => {
-                                    scrollToSection(e, "services");
+                                    scrollToSection(e, "motion-graphics");
                                     setIsOpen(false);
                                 }}
                                 className="hover:text-primary transition"

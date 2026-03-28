@@ -21,7 +21,7 @@ export default function MotionGraphicsSection() {
   };
 
   return (
-    <section id="portfolio" className="py-8">
+    <section id="motion-graphics" className="py-8">
       <div className="mx-auto max-w-[1400px] px-6">
 
         {/* Header */}

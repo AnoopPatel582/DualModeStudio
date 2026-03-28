@@ -3,7 +3,7 @@ import { syne } from "@/app/fonts";
 
 export default function ContactPage() {
   return (
-    <section className="py-8">
+    <section id="contact" className="py-8">
       <div className="mx-auto max-w-[700px] px-6">
         
         <div className="text-center mb-16">

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { portfolioData } from "@/lib/portfolioData";
 import PortfolioCard from "@/components/PortfolioCard";
 import VideoModal from "@/components/VideoModal";
@@ -10,7 +11,6 @@ const tabs = ["All", "Long Form Video", "Short Form Video", "Thumbnails"];
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("All");
   const [activeVideo, setActiveVideo] = useState(null);
-
   const filtered =
     activeTab === "All"
       ? portfolioData
@@ -67,6 +67,25 @@ export default function PortfolioPage() {
           video={activeVideo}
           onClose={() => setActiveVideo(null)}
         />
+
+        {/* CTA */}
+        <div className="mt-24 max-w-3xl mx-auto text-center border-t border-white/10 pt-20">
+          <h2
+            className={`${syne.className} text-4xl md:text-4xl font-semibold text-white`}
+          >
+            Ready to Create Your Success Story?
+          </h2>
+          <p className="mt-4 text-white/60 text-lg">
+            Let&apos;s discuss how we can help your brand achieve similar
+            results
+          </p>
+          <Link
+            href="/#contact"
+            className="mt-8 inline-flex px-8 py-3 rounded-full bg-primary text-black font-medium hover:bg-blue-500 transition-colors cursor-pointer"
+          >
+            Start Your Project
+          </Link>
+        </div>
 
       </div>
     </main>

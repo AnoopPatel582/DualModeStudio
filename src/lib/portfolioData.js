@@ -15,6 +15,21 @@ export const portfolioData = [
       category: "Long Form Video",
     },
     {
+      title: "Sample Long Form Video 4",
+      video: "https://www.youtube.com/embed/9OLeeo3X1dc?si=PKDPdedPE3dJ9ARl",
+      category: "Long Form Video",
+    },
+    {
+      title: "Sample Long Form Video 5",
+      video: "https://www.youtube.com/embed/IPn2WVt9YBc?si=XB4HCd5XRUsTWyPy",
+      category: "Long Form Video",
+    },
+    {
+      title: "Sample Long Form Video 6",
+      video: "https://www.youtube.com/embed/bu9IhF6z1t4?si=0KQu1csX91CNoLx4",
+      category: "Long Form Video",
+    },
+    {
       title: "Sample Short Form Video 1",
       video: "https://www.youtube.com/embed/sL4M04X0TMY?si=ZTobybCCMqhhHEC_",
       category: "Short Form Video",
@@ -30,6 +45,21 @@ export const portfolioData = [
       category: "Short Form Video",
     },
     {
+      title: "Sample Short Form Video 4",
+      video: "https://youtube.com/embed/ZpUkbQ20jog?si=etHKLrld1TlxHX9G",
+      category: "Short Form Video",
+    },
+    {
+      title: "Sample Short Form Video 5",
+      video: "https://youtube.com/embed/k67dRcw2K08?si=qzmkYCVo0FSkRE4D",
+      category: "Short Form Video",
+    },
+    {
+      title: "Sample Short Form Video 6",
+      video: "https://youtube.com/embed/nXy7HSzmTzs?si=yyc2DifKcgvIDz2T",
+      category: "Short Form Video",
+    },
+    {
       title: "Sample Thumbnail 1",
       video: "/thumb1.png",
       category: "Thumbnails",
@@ -42,6 +72,21 @@ export const portfolioData = [
     {
       title: "Sample Thumbnail 3",
       video: "/thumb3.png",
+      category: "Thumbnails",
+    },
+    {
+      title: "Sample Thumbnail 4",
+      video: "/thumb4.jpeg",
+      category: "Thumbnails",
+    },
+    {
+      title: "Sample Thumbnail 5",
+      video: "/thumb5.png",
+      category: "Thumbnails",
+    },
+    {
+      title: "Sample Thumbnail 6",
+      video: "/thumb6.png",
       category: "Thumbnails",
     },
   ];
