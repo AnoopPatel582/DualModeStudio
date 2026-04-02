@@ -107,6 +107,7 @@ export default function Hero() {
           <br /><br />
 
           Spending hours editing but still watching your retention flatline?
+          <br />
           DualMode Studio changes that.
         </motion.p>
       </div>

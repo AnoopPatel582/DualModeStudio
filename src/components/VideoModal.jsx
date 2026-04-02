@@ -49,12 +49,14 @@ export default function VideoModal({ video, onClose }) {
               className="w-full max-h-[85vh] object-contain rounded-xl border border-white/10 mx-auto"
             />
           ) : (
-            <video
-              src={video}
-              controls
-              autoPlay
-              className="w-full aspect-video rounded-xl border border-white/10 object-cover"
-            />
+            <div className="aspect-video w-full rounded-xl border border-white/10 bg-black flex items-center justify-center">
+              <video
+                src={video}
+                controls
+                autoPlay
+                className="w-full h-full object-contain"
+              />
+            </div>
           )}
         </div>
       </div>

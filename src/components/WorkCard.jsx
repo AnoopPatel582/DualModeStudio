@@ -4,7 +4,7 @@ export default function WorkCard({ work, openModal }) {
     <div className="cursor-pointer shrink-0 w-[360px] group" onClick={() => openModal(work.video)}>
 
       {/* Video Card */}
-      <div className="relative w-full aspect-video rounded-xl border border-white/10 overflow-hidden bg-white/[0.02] transition-all duration-300 group-hover:border-white/25 group-hover:-translate-y-1">
+      <div className="relative w-full aspect-video rounded-xl border border-white/10 overflow-hidden bg-black transition-all duration-300 group-hover:border-white/25 group-hover:-translate-y-1">
 
         {/* Category Badge */}
         {work.category && (
@@ -19,7 +19,7 @@ export default function WorkCard({ work, openModal }) {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           onMouseEnter={(e) => e.target.setAttribute("controls", true)}
           onMouseLeave={(e) => e.target.removeAttribute("controls")}
         />
