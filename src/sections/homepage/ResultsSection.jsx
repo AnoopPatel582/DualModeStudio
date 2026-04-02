@@ -37,14 +37,15 @@ export default function ResultsSection() {
                     key={i}
                     type="button"
                     onClick={() => openResultLink(item.link)}
-                    className="relative rounded-2xl overflow-hidden border border-white/10 aspect-[10/16] cursor-pointer"
+                    className="group relative rounded-2xl overflow-hidden border border-white/10 aspect-[10/16] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-white/35 hover:shadow-lg hover:shadow-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     <Image
                       src={item.src}
                       alt={item.alt}
                       fill
-                      className="object-cover scale-[1.03]"
+                      className="object-cover scale-[1.03] transition-transform duration-300 group-hover:scale-105"
                     />
+                    <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
                   </button>
                 ))}
               </div>

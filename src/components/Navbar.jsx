@@ -48,8 +48,8 @@ export default function Navbar() {
                         Portfolio
                     </Link>
                     <Link
-                        href="#motion-graphics"
-                        onClick={(e) => scrollToSection(e, "motion-graphics")}
+                        href="#growth-framework"
+                        onClick={(e) => scrollToSection(e, "growth-framework")}
                         className="hover:text-primary transition"
                     >
                         Services
@@ -114,9 +114,9 @@ export default function Navbar() {
                             </Link>
 
                             <Link
-                                href="#motion-graphics"
+                                href="#growth-framework"
                                 onClick={(e) => {
-                                    scrollToSection(e, "motion-graphics");
+                                    scrollToSection(e, "growth-framework");
                                     setIsOpen(false);
                                 }}
                                 className="hover:text-primary transition"

@@ -1,75 +1,57 @@
 "use client";
-import { useState, useRef } from "react";
-import { worksData } from "@/lib/worksData";
+
+import { useState } from "react";
+import { worksLandscape, worksReels } from "@/lib/worksData";
 import WorkCard from "@/components/WorkCard";
 import VideoModal from "@/components/VideoModal";
 import { syne } from "@/app/fonts";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function MotionGraphicsSection() {
   const [activeVideo, setActiveVideo] = useState(null);
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -400 : 400,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <section id="motion-graphics" className="py-8">
       <div className="mx-auto max-w-[1400px] px-6">
-
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className={`${syne.className} text-4xl md:text-5xl font-semibold text-white`}>
+          <h2
+            className={`${syne.className} text-4xl md:text-5xl font-semibold text-white`}
+          >
             Motion Graphics Works
           </h2>
           <p className="mt-6 text-white/60">
-            A glimpse into the motion graphics and editing systems powering our clients' content.
+            A glimpse into the motion graphics and editing systems powering our
+            clients&apos; content.
           </p>
         </div>
 
-        {/* Scroll Row + Buttons */}
-        <div className="relative">
-
-          {/* Left Button */}
-          <button
-            onClick={() => scroll("left")}
-            className="absolute -left-5 top-[40%] -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full p-2 transition-all duration-200 cursor-pointer"
-          >
-            <ChevronLeft className="w-5 h-5 text-white" />
-          </button>
-
-          {/* Scrollable Row */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
-          >
-            {worksData.map((work, index) => (
+        {/* Same max width + grid as Results “Views We Generated” cards */}
+        <div className="mx-auto w-full max-w-[800px] space-y-8">
+          {/* Row 1 — landscape; add your URLs in worksData.js (worksLandscape) */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {worksLandscape.map((work, index) => (
               <WorkCard
-                key={index}
+                key={`landscape-${index}`}
                 work={work}
                 openModal={setActiveVideo}
+                variant="landscape"
               />
             ))}
           </div>
 
-          {/* Right Button */}
-          <button
-            onClick={() => scroll("right")}
-            className="absolute -right-5 top-[40%] -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full p-2 transition-all duration-200 cursor-pointer"
-          >
-            <ChevronRight className="w-5 h-5 text-white" />
-          </button>
-
+          {/* Row 2 — reels / shorts (same cell size as Views cards: aspect 10/16) */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {worksReels.map((work, index) => (
+              <WorkCard
+                key={`reel-${index}`}
+                work={work}
+                openModal={setActiveVideo}
+                variant="reel"
+              />
+            ))}
+          </div>
         </div>
 
-        {/* View All Projects Button */}
         <div className="mt-12 flex justify-center">
           <Link
             href="/portfolio"
@@ -79,9 +61,7 @@ export default function MotionGraphicsSection() {
           </Link>
         </div>
 
-        {/* Modal */}
         <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
-
       </div>
     </section>
   );

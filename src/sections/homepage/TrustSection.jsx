@@ -26,88 +26,94 @@ export default function TrustSection() {
         </p>
       </div>
 
-      {/* ── Logo Marquee ── */}
-      <div className="relative mb-16">
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10"
-          style={{ background: "linear-gradient(to right, #000 0%, transparent 100%)" }}
-        />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10"
-          style={{ background: "linear-gradient(to left, #000 0%, transparent 100%)" }}
-        />
-        <div className="flex overflow-hidden">
-          <div className="flex gap-10 animate-marquee-left">
-            {[...logos, ...logos, ...logos].map((logo, i) => (
-              <div
-                key={i}
-                className="shrink-0 w-16 h-16 rounded-full border border-white/10 overflow-hidden transition-transform duration-300 hover:-translate-y-1"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={64}
-                  height={64}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            ))}
+      {/* ── Logo Marquee (clipped to content width) ── */}
+      <div className="mx-auto mb-16 max-w-[1400px] px-6">
+        <div className="relative overflow-hidden rounded-xl">
+          <div
+            className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black to-transparent"
+          />
+          <div
+            className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black to-transparent"
+          />
+          <div className="flex overflow-hidden">
+            <div className="flex gap-10 animate-marquee-left">
+              {[...logos, ...logos, ...logos].map((logo, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 w-16 h-16 rounded-full border border-white/10 overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ── Feedback Row 1 — scrolls left ── */}
-      <div className="relative mb-6">
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10"
-          style={{ background: "linear-gradient(to right, #000 0%, transparent 100%)" }}
-        />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10"
-          style={{ background: "linear-gradient(to left, #000 0%, transparent 100%)" }}
-        />
-        <div className="flex overflow-hidden">
-          <div className="flex gap-6 animate-marquee-left">
-            {[...feedbackRow1, ...feedbackRow1].map((item, i) => (
-              <div
-                key={i}
-                onClick={() => setSelectedImage(item.src)}
-                className="shrink-0 w-[320px] h-[250px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={320}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            ))}
+      {/* ── Feedback Row 1 — scrolls left (clipped to content width) ── */}
+      <div className="mx-auto mb-6 max-w-[1400px] px-6">
+        <div className="relative overflow-hidden rounded-xl">
+          <div
+            className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black to-transparent"
+          />
+          <div
+            className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black to-transparent"
+          />
+          <div className="flex overflow-hidden">
+            <div className="flex gap-6 animate-marquee-left">
+              {[...feedbackRow1, ...feedbackRow1].map((item, i) => (
+                <div
+                  key={i}
+                  onClick={() => setSelectedImage(item.src)}
+                  className="shrink-0 w-[320px] h-[250px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={320}
+                    height={200}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ── Feedback Row 2 — scrolls right ── */}
-      <div className="relative mb-12">
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10"
-          style={{ background: "linear-gradient(to right, #000 0%, transparent 100%)" }}
-        />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10"
-          style={{ background: "linear-gradient(to left, #000 0%, transparent 100%)" }}
-        />
-        <div className="flex overflow-hidden">
-          <div className="flex gap-6 animate-marquee-right">
-            {[...feedbackRow2, ...feedbackRow2].map((item, i) => (
-              <div
-                key={i}
-                onClick={() => setSelectedImage(item.src)}
-                className="shrink-0 w-[320px] h-[220px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={320}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            ))}
+      {/* ── Feedback Row 2 — scrolls right (clipped to content width) ── */}
+      <div className="mx-auto mb-12 max-w-[1400px] px-6">
+        <div className="relative overflow-hidden rounded-xl">
+          <div
+            className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black to-transparent"
+          />
+          <div
+            className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black to-transparent"
+          />
+          <div className="flex overflow-hidden">
+            <div className="flex gap-6 animate-marquee-right">
+              {[...feedbackRow2, ...feedbackRow2].map((item, i) => (
+                <div
+                  key={i}
+                  onClick={() => setSelectedImage(item.src)}
+                  className="shrink-0 w-[320px] h-[220px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={320}
+                    height={200}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

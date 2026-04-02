@@ -3,7 +3,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 export default function GrowthFrameworkSection() {
   return (
-    <section className="relative w-full">
+    <section id="growth-framework" className="relative w-full scroll-mt-24">
       <div className="mx-auto max-w-[1400px] px-6">
 
         {/* Section Header */}
