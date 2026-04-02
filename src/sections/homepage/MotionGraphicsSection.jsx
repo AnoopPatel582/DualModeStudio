@@ -25,30 +25,33 @@ export default function MotionGraphicsSection() {
           </p>
         </div>
 
-        {/* Same max width + grid as Results “Views We Generated” cards */}
-        <div className="mx-auto w-full max-w-[800px] space-y-8">
-          {/* Row 1 — landscape; add your URLs in worksData.js (worksLandscape) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {worksLandscape.map((work, index) => (
-              <WorkCard
-                key={`landscape-${index}`}
-                work={work}
-                openModal={setActiveVideo}
-                variant="landscape"
-              />
-            ))}
+        <div className="mx-auto w-full space-y-8">
+          {/* Top: 4 landscape cards in a 2×2 grid (larger than 4-in-a-row) */}
+          <div className="mx-auto w-full max-w-[800px]">
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
+              {worksLandscape.map((work, index) => (
+                <WorkCard
+                  key={`landscape-${index}`}
+                  work={work}
+                  openModal={setActiveVideo}
+                  variant="landscape"
+                />
+              ))}
+            </div>
           </div>
 
-          {/* Row 2 — reels / shorts (same cell size as Views cards: aspect 10/16) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {worksReels.map((work, index) => (
-              <WorkCard
-                key={`reel-${index}`}
-                work={work}
-                openModal={setActiveVideo}
-                variant="reel"
-              />
-            ))}
+          {/* Bottom: reels — same width as Results “Views” strip (4 across) */}
+          <div className="mx-auto w-full max-w-[800px]">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {worksReels.map((work, index) => (
+                <WorkCard
+                  key={`reel-${index}`}
+                  work={work}
+                  openModal={setActiveVideo}
+                  variant="reel"
+                />
+              ))}
+            </div>
           </div>
         </div>
 
