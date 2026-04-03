@@ -78,7 +78,7 @@ export default function PainPointsSection() {
                 </div>
 
                 {/* ── Divider ── */}
-                <div className="mt-16 h-px w-full bg-white/10" />
+                <div className="mt-8 h-px w-full bg-white/10" />
 
                 {/* ── That's Exactly Why We Exist ── */}
                 <div className="mt-8 text-center">
