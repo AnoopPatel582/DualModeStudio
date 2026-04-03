@@ -10,6 +10,7 @@ import FoundersSection from "@/sections/homepage/FoundersSection";
 import ContactPage from "@/app/contact/page";
 import MotionGraphicsSection from "@/sections/homepage/MotionGraphicsSection";
 import ResultsSection from "@/sections/homepage/ResultsSection";
+import PainPointsSection from "@/sections/homepage/PainPointsSection";
 
 export default function Home() {
   return (
@@ -36,6 +37,9 @@ export default function Home() {
       </ScrollReveal>
       <ScrollReveal>
         <ResultsSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PainPointsSection />
       </ScrollReveal>
       <ScrollReveal>
         <FoundersSection />
