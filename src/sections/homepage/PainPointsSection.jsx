@@ -31,7 +31,7 @@ export default function PainPointsSection() {
                 {/* ── Heading ── */}
                 <div className="text-center mb-8">
                     <h2
-                        className={`${syne.className} text-4xl md:text-5xl font-semibold text-white leading-tight inline-block px-6 py-4 md:px-24 md:py-6 rounded-3xl`}
+                        className={`${syne.className} text-3xl md:text-5xl font-semibold text-white leading-tight inline-block px-6 py-4 md:px-24 md:py-6 rounded-3xl`}
                         style={{
                             background: "linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)",
                             boxShadow: `
