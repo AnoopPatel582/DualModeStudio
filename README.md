@@ -186,38 +186,6 @@ Each card is clickable and opens a full-size **VideoModal** with autoplay.
 
 ---
 
-## Pricing
-
-### Long-Form Video Editing
-
-| Plan | Duration | Price |
-|---|---|---|
-| Essential Plan | Up to 8 min | $100 / video |
-| Creator Growth | Up to 15 min | $240 / video |
-| Cinematic Plan | Up to 25 min | $300 / video |
-| Custom Category | Advanced edits (docs, podcasts, gaming, series) | $500 / video |
-
-**Cinematic Plan features:** Cinematic storytelling, advanced transitions, dynamic motion graphics, sound design, priority delivery.
-
-### Short-Form Video Editing
-
-| Plan | Price |
-|---|---|
-| Pay-Per-Reel | $20 / reel (up to 60 sec, 24hr delivery, 2 revisions) |
-| Momentum Plan | $240 / month (12 reels, priority turnaround, 3 revisions/reel) |
-| Scale Plan | $550 / month (up to 30 reels, unlimited revisions, thumbnail + caption suggestions) |
-| Unlimited Plan | $750 / month (unlimited submissions, dedicated editor, same-day possible) |
-
-### Thumbnail Design
-
-| Plan | Price |
-|---|---|
-| Basic | $5 |
-| Standard ⭐ | $15 |
-| Premium | $20 |
-
----
-
 ## Key Features
 
 ### Video Embedding
@@ -357,7 +325,7 @@ RESEND_API_KEY=your_resend_api_key_here
 
 The site is deployed and live at **[dualmodestudio.com](https://dualmodestudio.com)**.
 
-The project is hosted on **Vercel** (recommended for Next.js). To deploy:
+The project is hosted on **Vercel**. To deploy:
 
 1. Push to the `main` branch on GitHub (`AnoopPatel582/DualModeStudio`).
 2. Vercel automatically builds and deploys on every push.
