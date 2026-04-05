@@ -3,6 +3,8 @@
 import { X } from "lucide-react";
 import {
   isYouTubeUrl,
+  isVimeoUrl,
+  toVimeoEmbedUrl,
   isImageMediaUrl,
   appendQueryParams,
   toYouTubeEmbedUrl,
@@ -38,6 +40,16 @@ export default function VideoModal({ video, onClose }) {
                 )}
                 title="Portfolio video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
+          ) : isVimeoUrl(video) ? (
+            <div className="aspect-video w-full rounded-xl overflow-hidden border border-white/10 bg-black">
+              <iframe
+                src={appendQueryParams(toVimeoEmbedUrl(video), "autoplay=1")}
+                title="Portfolio video"
+                allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full border-0"
               />

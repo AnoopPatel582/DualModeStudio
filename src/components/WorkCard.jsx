@@ -2,6 +2,8 @@
 
 import {
   isYouTubeUrl,
+  isVimeoUrl,
+  toVimeoEmbedUrl,
   buildYouTubePortfolioCardEmbedSrc,
 } from "@/lib/mediaUrl";
 
@@ -45,6 +47,14 @@ export default function WorkCard({ work, openModal, variant = "landscape" }) {
             src={buildYouTubePortfolioCardEmbedSrc(work.video)}
             title={work.title}
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="pointer-events-none absolute inset-0 h-full w-full border-0"
+          />
+        ) : isVimeoUrl(work.video) ? (
+          <iframe
+            src={toVimeoEmbedUrl(work.video)}
+            title={work.title}
+            allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
             className="pointer-events-none absolute inset-0 h-full w-full border-0"
           />

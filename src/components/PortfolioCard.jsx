@@ -2,6 +2,8 @@
 
 import {
   isYouTubeUrl,
+  isVimeoUrl,
+  toVimeoEmbedUrl,
   isImageMediaUrl,
   buildYouTubePortfolioCardEmbedSrc,
 } from "@/lib/mediaUrl";
@@ -10,6 +12,7 @@ export default function PortfolioCard({ work, openModal }) {
   const { video, title } = work;
 
   const isYoutube = isYouTubeUrl(video);
+  const isVimeo = isVimeoUrl(video);
   const isImage = isImageMediaUrl(video);
 
   const handleCardClick = () => {
@@ -35,6 +38,14 @@ export default function PortfolioCard({ work, openModal }) {
             src={buildYouTubePortfolioCardEmbedSrc(video)}
             title={title}
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="pointer-events-none absolute inset-0 z-0 h-full w-full border-0"
+          />
+        ) : isVimeo ? (
+          <iframe
+            src={toVimeoEmbedUrl(video)}
+            title={title}
+            allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
             className="pointer-events-none absolute inset-0 z-0 h-full w-full border-0"
           />

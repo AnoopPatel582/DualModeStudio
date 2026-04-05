@@ -8,6 +8,29 @@ export function isYouTubeUrl(url) {
   return /youtube\.com\/(embed\/|watch\?v=)|youtu\.be\//i.test(url);
 }
 
+/** Detect Vimeo share or embed links. */
+export function isVimeoUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  return /vimeo\.com\//i.test(url);
+}
+
+/**
+ * Convert any Vimeo URL (share link or existing embed link) to an embed URL.
+ * e.g. https://vimeo.com/1180262717?share=copy → https://player.vimeo.com/video/1180262717
+ */
+export function toVimeoEmbedUrl(url) {
+  if (!url || typeof url !== "string") return url;
+  const trimmed = url.trim();
+  // Already an embed URL
+  if (/player\.vimeo\.com\/video\//i.test(trimmed)) return trimmed;
+  // Extract numeric ID from share / standard link
+  const match = trimmed.match(/vimeo\.com\/(\d+)/);
+  if (match) {
+    return `https://player.vimeo.com/video/${match[1]}`;
+  }
+  return trimmed;
+}
+
 /** Use embed URL for iframes (handles watch?v= and youtu.be). */
 export function toYouTubeEmbedUrl(url) {
   if (!url || typeof url !== "string") return url;

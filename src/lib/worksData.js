@@ -1,35 +1,35 @@
 const allWorks = [
   {
-    title: "Podcast Motion Graphics",
+    title: "Visual Curiosity",
     description:
-      "Dynamic motion graphics crafted to elevate podcast visuals and audience retention.",
-    category: "Podcast",
+      "Psychology trick to get views on any niche videos",
+    category: "Informative",
     video:
-      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739610/file_6_et6p6z.mp4",
+      "https://vimeo.com/1180262717?share=copy&fl=sv&fe=ci",
   },
   {
-    title: "YouTube Automation Edit",
+    title: "How to build a personal brand Khaled",
     description:
-      "Fully optimized automation-style edit built for consistent, scalable YouTube output.",
-    category: "Automation",
+      "Tips and tricks to build a personal brand",
+    category: "Informative",
     video:
-      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739681/file_5_gvw9sn.mp4",
+      "https://vimeo.com/1180262251?share=copy&fl=sv&fe=ci",
   },
   {
-    title: "Educational Content Edit",
+    title: "Sell anything you want",
     description:
-      "Structured educational edit designed to simplify complex topics and boost watch time.",
-    category: "Education",
-    video:
-      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739620/file_3_bkzcuc.mp4",
-  },
-  {
-    title: "Business Content Edit",
-    description:
-      "Professional business content edited to communicate authority and drive conversions.",
+      "Key rules to sell anything you want",
     category: "Business",
     video:
-      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739643/file_2_uaplqe.mp4",
+      "https://vimeo.com/1180263181?share=copy&fl=sv&fe=ci",
+  },
+  {
+    title: "Red Flags in Negotiation",
+    description:
+      "Be aware of these red flags in negotiation",
+    category: "Podcast",
+    video:
+      "https://vimeo.com/1180264037?share=copy&fl=sv&fe=ci",
   },
   {
     title: "Corporate Motion Graphics",
@@ -55,28 +55,28 @@ const allWorks = [
  */
 export const worksLandscape = [
   {
-    title: "Featured work 1",
-    description: "",
-    category: "Motion",
-    video: "https://www.youtube.com/embed/zvHJftkJrfA?si=F8KOs9tY78mYcvzq",
+    title: "The 7 LEVELS of Clone Trooper Explained!",
+    description: "Red Five explores the diverse ranks within the Grand Army of the Republic.",
+    // category: "Informative and Entertainment",
+    video: "https://www.youtube.com/embed/nZeFYZpS6jE?si=UYvoOboOvCdkfMB-",
   },
   {
-    title: "Featured work 2",
-    description: "",
-    category: "Motion",
-    video: "https://www.youtube.com/embed/zvHJftkJrfA?si=F8KOs9tY78mYcvzq",
+    title: "The 10 LARGEST Ships in ALL of Star Wars!",
+    description: "This video explores the top 10 largest Star Wars ships, ranking them by size.",
+    // category: "Film & Animation",
+    video: "https://www.youtube.com/embed/CsLrJapWLzU?si=EkbakIHUkIsRTFwG",
   },
   {
-    title: "Featured work 3",
-    description: "",
-    category: "Motion",
-    video: "https://www.youtube.com/embed/zvHJftkJrfA?si=F8KOs9tY78mYcvzq",
+    title: "EVERY SINGLE Space Marine Legion Explained! (Post Heresy)",
+    description: "Explore the fates of every Space Marine Legion after the Horus Heresy.",
+    // category: "Motion",
+    video: "https://www.youtube.com/embed/WWt9pKMKXTc?si=Y3HKe3k7oDiJjSCs",
   },
   {
-    title: "Featured work 4",
-    description: "",
-    category: "Motion",
-    video: "https://www.youtube.com/embed/W1XFZLzRyZ4?si=KcEEVakhy4vwEk_q",
+    title: "ALL 24 MCU Avengers Explained!",
+    description: "This video summarizes the origins, character arcs, and legacies of all 24 MCU Avengers and key team members.",
+    // category: "Motion",
+    video: "https://www.youtube.com/embed/H1VWOgebWVg?si=aGps22u6qsDxb9ea",
   },
 ];
 
