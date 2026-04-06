@@ -13,7 +13,7 @@ export default function Footer() {
 
         {/* Left Block */}
 
-        <div className="max-w-sm text-center md:text-left">
+        <div className="flex flex-col items-center md:items-start max-w-sm text-center md:text-left">
 
           <Image
             src="/logo_title.png"
@@ -23,7 +23,7 @@ export default function Footer() {
             
           />
 
-          <p className="text-gray-400 leading-relaxed ml-6">
+          <p className="text-gray-400 leading-relaxed mt-2">
             Performance-driven YouTube growth systems engineered for scale.
           </p>
 
