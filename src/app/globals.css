@@ -12,7 +12,10 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
 }
-* { scrollbar-width: none; }
+
+* {
+  scrollbar-width: none;
+}
 
 html {
   scroll-behavior: smooth;
@@ -24,9 +27,11 @@ body {
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
+
 .font-syne {
   font-family: var(--font-syne), sans-serif;
 }
+
 .text-primary {
   color: var(--primary);
 }
@@ -42,7 +47,9 @@ body {
 }
 
 @keyframes borderSpin {
-  to { --angle: 360deg; }
+  to {
+    --angle: 360deg;
+  }
 }
 
 .glow-card::before {
@@ -51,30 +58,40 @@ body {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: conic-gradient(
-    from var(--angle),       /* ← key change */
-    transparent 0deg,
-    transparent 300deg,
-    rgba(255, 255, 255, 0.9) 330deg,
-    transparent 360deg
-  );
-  animation: borderSpin 4s linear infinite;  /* ← animates --angle, not transform */
+  background: conic-gradient(from var(--angle),
+      /* ← key change */
+      transparent 0deg,
+      transparent 300deg,
+      rgba(255, 255, 255, 0.9) 330deg,
+      transparent 360deg);
+  animation: borderSpin 4s linear infinite;
+  /* ← animates --angle, not transform */
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-} 
+}
 
 @keyframes marquee-left {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /* ── Marquee Animation Classes ── */
@@ -84,4 +101,10 @@ body {
 
 .animate-marquee-right {
   animation: marquee-right 30s linear infinite;
+}
+
+.darkveil-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
 }

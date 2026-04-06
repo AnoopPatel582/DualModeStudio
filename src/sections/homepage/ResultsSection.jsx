@@ -60,7 +60,7 @@ export default function ResultsSection() {
           {/* Heading — left aligned */}
           <div className="mb-10">
             <h2 className={`${syne.className} text-4xl md:text-5xl font-semibold text-white inline-flex items-center gap-3 flex-wrap`}>
-              <span>Channel Growth We Delivered</span>
+              <span>Growth We Delivered</span>
               <TfiStatsUp className="text-white shrink-0" />
             </h2>
             <div className="mt-3 h-px w-full bg-white/10" />

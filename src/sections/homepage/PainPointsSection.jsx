@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const painPoints = [
     {
         icon: <Clock className="w-10 h-10 text-white/70" />,
-        title: "No Time to Build Your Brand",
+        title: "Time to Build Your Brand",
         description:
             "You're buried running your business — and your content? It's always the first thing that gets pushed to 'tomorrow'.",
     },

@@ -2,10 +2,7 @@
 
 import { motion } from "framer-motion";
 import { syne } from "@/app/fonts";
-
-// Replace with your Cloudinary video URL for the hero background animation
-const HERO_BG_VIDEO_URL =
-  "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772741825/Nested_Sequence_719_1_mwalpc.mp4";
+import DarkVeil from "@/components/DarkVeil";
 
 const heading = "DualMode Studio";
 const subheading = "Social Media production, retention editing & more";
@@ -20,19 +17,19 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[70vh] flex justify-center text-center px-6 pt-32 md:pt-32 lg:pt-36 overflow-hidden"
     >
-      {/* Background video with reduced opacity */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src={HERO_BG_VIDEO_URL} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40" aria-hidden />
+      {/* Background: DarkVeil WebGL animation */}
+      <div className="absolute inset-0 z-0 opacity-50">
+        <DarkVeil
+          hueShift={25}
+          noiseIntensity={0.05}
+          scanlineIntensity={0}
+          speed={2}
+          scanlineFrequency={0.5}
+          warpAmount={3}
+        />
       </div>
+      {/* Overlay to keep text readable */}
+      <div className="absolute inset-0 z-[1] bg-black/40" aria-hidden />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -102,7 +99,9 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          We're a video editing agency that fuses data-driven strategy with cinematic execution—transforming underperforming content into viewer magnets that grow your audience, brand, and revenue.
+          We&apos;re a video editing agency that fuses data-driven strategy with
+          cinematic execution—transforming underperforming content into viewer
+          magnets that grow your audience, brand, and revenue.
 
           <br /><br />
 

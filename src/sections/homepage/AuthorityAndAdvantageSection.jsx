@@ -3,7 +3,7 @@ import { syne } from "@/app/fonts";
 const reasons = [
   {
     number: "01",
-    title: "YouTube-First Focus",
+    title: "Quality First Focus",
     description:
       "No distractions – we eat, sleep, and breathe platform trends.",
   },
@@ -24,8 +24,6 @@ export default function AuthorityAndAdvantageSection() {
   return (
     <section className="relative w-full py-16">
       <div className="mx-auto max-w-[1200px] px-6">
-
-        {/* ================= Section Heading ================= */}
         <div className="mx-auto max-w-[700px] text-center">
           <h2
             className={`${syne.className} text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl`}
@@ -33,8 +31,6 @@ export default function AuthorityAndAdvantageSection() {
             Why partner with us?
           </h2>
         </div>
-
-        {/* ================= Stacked Cards ================= */}
         <div className="mx-auto mt-16 flex max-w-[700px] flex-col gap-4">
           {reasons.map((reason) => (
             <div
