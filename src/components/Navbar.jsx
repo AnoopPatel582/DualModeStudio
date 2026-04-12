@@ -62,12 +62,12 @@ export default function Navbar() {
                         Contact
                     </Link>
                     <a
-                        href="https://wa.me/+918800946239"
+                        href="https://linktr.ee/dualmodestudio"
                         target="_blank"
-                        className="flex items-center gap-2 px-4 py-2 bg-primary text-black rounded-full hover:opacity-90 transition"
+                        className="flex items-center gap-2 px-3 py-2 bg-primary text-black rounded-full hover:opacity-90 transition"
                     >
-                        <Image src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
-                        <span>WhatsApp Us</span>
+                        <Image src="/Linktree.png" alt="Linktree" width={20} height={20} />
+                        <span>Get in Touch</span>
                     </a>
                 </div>
 
