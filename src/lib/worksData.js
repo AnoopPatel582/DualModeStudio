@@ -61,10 +61,10 @@ export const worksLandscape = [
     video: "https://www.youtube.com/embed/nZeFYZpS6jE?si=UYvoOboOvCdkfMB-",
   },
   {
-    title: "The 10 LARGEST Ships in ALL of Star Wars!",
-    description: "This video explores the top 10 largest Star Wars ships, ranking them by size.",
+    title: "How I Got 800,000 Instagram Followers in 5 Months! (Copy Me)",
+    description: "This video details specific content strategies, emphasizing the importance of hooks and visual consistency.",
     // category: "Film & Animation",
-    video: "https://www.youtube.com/embed/CsLrJapWLzU?si=EkbakIHUkIsRTFwG",
+    video: "https://www.youtube.com/embed/oSKXUiP0UR8?si=pqZJ3eWLXXk5FM2A",
   },
   {
     title: "EVERY SINGLE Space Marine Legion Explained! (Post Heresy)",

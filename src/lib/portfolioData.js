@@ -5,6 +5,11 @@ export const portfolioData = [
     category: "Long Form Video",
   },
   {
+    title: "The 10 LARGEST Ships in ALL of Star Wars!",
+    video: "https://www.youtube.com/embed/CsLrJapWLzU?si=EkbakIHUkIsRTFwG",
+    category: "Long Form Video",
+  },
+  {
     title: "Scary Truth About João Pedro",
     video: "https://www.youtube.com/embed/TbvV3Pa39jM?si=i5_pR5lk8yButWTZ",
     category: "Long Form Video",
