@@ -136,12 +136,12 @@ export default function Navbar() {
                             </Link>
 
                             <a
-                                href="https://wa.me/YOUR_NUMBER"
+                                href="https://linktr.ee/dualmodestudio"
                                 target="_blank"
                                 onClick={() => setIsOpen(false)}
                                 className="flex items-center gap-2 px-6 py-3 bg-primary text-black rounded-full hover:opacity-90 transition"
                             >
-                                WhatsApp Us
+                                Get in Touch
                             </a>
 
                         </div>

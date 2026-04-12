@@ -1,43 +1,54 @@
 "use client";
 
 import { useState } from "react";
-import validator from "validator";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_xqopq89";
+const EMAILJS_TEMPLATE_ID = "template_b03kfcp";
+const EMAILJS_PUBLIC_KEY = "m9TNFb6HoGoxMjC5F";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     setLoading(true);
     setSuccess(false);
+    setError("");
 
     const formData = new FormData(e.target);
+    const firstName = formData.get("firstName");
+    const lastName = formData.get("lastName");
+    const email = formData.get("email");
+    const message = formData.get("message");
 
-    const data = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      email: formData.get("email"),
-      message: formData.get("message"),
+    const fullName = `${firstName} ${lastName}`.trim();
+
+    const templateParams = {
+      title: fullName,
+      name: fullName,
+      email: email,
+      message: message,
     };
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
-    if (res.ok) {
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
       setSuccess(true);
       e.target.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError("Something went wrong. Please try again or reach out directly.");
+    } finally {
+      setLoading(false);
     }
-    if (!validator.isEmail(data.email)) {
-        alert("Please enter a valid email address");
-        setLoading(false);
-        return;
-    }
-
-    setLoading(false);
   }
 
   return (
@@ -87,6 +98,12 @@ export default function ContactForm() {
       {success && (
         <p className="mt-6 text-green-400 text-center">
           ✓ Message sent successfully. We'll get back to you soon.
+        </p>
+      )}
+
+      {error && (
+        <p className="mt-6 text-red-400 text-center">
+          ✕ {error}
         </p>
       )}
     </form>
