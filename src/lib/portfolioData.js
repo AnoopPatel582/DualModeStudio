@@ -5,6 +5,26 @@ export const portfolioData = [
     category: "Long Form Video",
   },
   {
+    title: "The 7 LEVELS of Clone Trooper Explained!",
+    video: "https://www.youtube.com/embed/nZeFYZpS6jE?si=UYvoOboOvCdkfMB-",
+    category: "Long Form Video",
+  },
+  {
+    title: "How I Got 800,000 Instagram Followers in 5 Months! (Copy Me)",
+    video: "https://www.youtube.com/embed/oSKXUiP0UR8?si=pqZJ3eWLXXk5FM2A",
+    category: "Long Form Video",
+  },
+  {
+    title: "EVERY SINGLE Space Marine Legion Explained! (Post Heresy)",
+    video: "https://www.youtube.com/embed/WWt9pKMKXTc?si=Y3HKe3k7oDiJjSCs",
+    category: "Long Form Video",
+  },
+  {
+    title: "ALL 24 MCU Avengers Explained!",
+    video: "https://www.youtube.com/embed/H1VWOgebWVg?si=aGps22u6qsDxb9ea",
+    category: "Long Form Video",
+  },
+  {
     title: "The 10 LARGEST Ships in ALL of Star Wars!",
     video: "https://www.youtube.com/embed/CsLrJapWLzU?si=EkbakIHUkIsRTFwG",
     category: "Long Form Video",
@@ -77,6 +97,42 @@ export const portfolioData = [
   {
     title: "Psychology to Get millions of views",
     video: "https://vimeo.com/1180262298?share=copy&fl=sv&fe=ci",
+    category: "Short Form Video",
+  },
+  {
+    title: "Visual Curiosity",
+    video:
+      "https://vimeo.com/1180262717?share=copy&fl=sv&fe=ci",
+    category: "Short Form Video",
+  },
+  {
+    title: "How to build a personal brand Khaled",
+    video:
+      "https://vimeo.com/1180262251?share=copy&fl=sv&fe=ci",
+    category: "Short Form Video",
+  },
+  {
+    title: "Sell anything you want",
+    video:
+      "https://vimeo.com/1180263181?share=copy&fl=sv&fe=ci",
+    category: "Short Form Video",
+  },
+  {
+    title: "Red Flags in Negotiation",
+    video:
+      "https://vimeo.com/1180264037?share=copy&fl=sv&fe=ci",
+    category: "Short Form Video",
+  },
+  {
+    title: "Corporate Motion Graphics",
+    video:
+      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739661/file_7_cxd5pd.mp4",
+    category: "Short Form Video",
+  },
+  {
+    title: "Explainer Motion Graphics",
+    video:
+      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739677/file_4_raanjw.mp4",
     category: "Short Form Video",
   },
   {
