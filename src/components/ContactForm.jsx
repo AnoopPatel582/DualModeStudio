@@ -3,9 +3,9 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID = "service_xqopq89";
-const EMAILJS_TEMPLATE_ID = "template_b03kfcp";
-const EMAILJS_PUBLIC_KEY = "m9TNFb6HoGoxMjC5F";
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
