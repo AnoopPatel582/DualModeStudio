@@ -38,11 +38,10 @@ export default function PortfolioPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200
-                ${
-                  activeTab === tab
-                    ? "bg-white text-black border-white"
-                    : "bg-transparent text-white/60 border-white/10 hover:border-white/30 hover:text-white"
+              className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200 cursor-pointer
+                ${activeTab === tab
+                  ? "bg-white text-black border-white cursor-pointer"
+                  : "bg-transparent text-white/60 border-white/10 hover:border-white/30 hover:text-white cursor-pointer"
                 }
               `}
             >
