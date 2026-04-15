@@ -123,18 +123,18 @@ export const portfolioData = [
       "https://vimeo.com/1180264037?share=copy&fl=sv&fe=ci",
     category: "Short Form Video",
   },
-  {
-    title: "Corporate Motion Graphics",
-    video:
-      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739661/file_7_cxd5pd.mp4",
-    category: "Short Form Video",
-  },
-  {
-    title: "Explainer Motion Graphics",
-    video:
-      "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739677/file_4_raanjw.mp4",
-    category: "Short Form Video",
-  },
+  // {
+  //   title: "Corporate Motion Graphics",
+  //   video:
+  //     "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739661/file_7_cxd5pd.mp4",
+  //   category: "Short Form Video",
+  // },
+  // {
+  //   title: "Explainer Motion Graphics",
+  //   video:
+  //     "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739677/file_4_raanjw.mp4",
+  //   category: "Short Form Video",
+  // },
   {
     title: "Stop Playing With Yourself!",
     video: "https://youtube.com/embed/GgYmHpy4wto?si=C1KgiBjC9oNqUB_K",
