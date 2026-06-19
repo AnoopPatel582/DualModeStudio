@@ -85,6 +85,26 @@ export const portfolioData = [
     category: "Long Form Video",
   },
   {
+    title: "The Power of Rebranding, Staying Consistent and Building Habits",
+    video: "https://www.youtube.com/embed/OIjYHKHdgl0?si=pPPD0anpGIpt2-EC",
+    category: "Podcast",
+  },
+  {
+    title: "Is Air Pollution Causing Your Asthma to Worsen?",
+    video: "https://www.youtube.com/embed/PX36CWCbdcc?si=PC_vcnJd_jRcRZsx",
+    category: "Podcast",
+  },
+  {
+    title: "The Reason You Haven’t Changed Your Life Yet (And How To) | Shivani Pau",
+    video: "https://www.youtube.com/embed/5nSNQfskohA?si=_ciqdnSg25k1-SPi",
+    category: "Podcast",
+  },
+  {
+    title: "The Untold Story Behind UAE Cricket’s Rise",
+    video: "https://www.youtube.com/embed/RA4-OjtoBuQ?si=f4EbJjNmKWL-38m1",
+    category: "Podcast",
+  },
+  {
     title: "Strategy to Get views on Instagram",
     video: "https://vimeo.com/1180263485?share=copy&fl=sv&fe=ci",
     category: "Short Form Video",

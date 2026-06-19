@@ -6,7 +6,7 @@ import PortfolioCard from "@/components/PortfolioCard";
 import VideoModal from "@/components/VideoModal";
 import { syne } from "@/app/fonts";
 
-const tabs = ["All", "Long Form Video", "Short Form Video", "Thumbnails"];
+const tabs = ["All", "Long Form Video", "Podcast", "Short Form Video", "Thumbnails"];
 
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("All");
