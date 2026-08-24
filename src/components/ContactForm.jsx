@@ -1,11 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
-
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+import { sendContactEmail } from "@/lib/emailjsContact";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -35,12 +31,7 @@ export default function ContactForm() {
     };
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
+      await sendContactEmail(templateParams);
       setSuccess(true);
       e.target.reset();
     } catch (err) {

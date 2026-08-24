@@ -45,8 +45,7 @@ The website serves as the agency's digital home — showcasing their portfolio, 
 | **Styling** | Tailwind CSS v4 |
 | **Animations** | [Framer Motion](https://www.framer.com/motion/) v12 |
 | **Icons** | [Lucide React](https://lucide.dev/) + [React Icons](https://react-icons.github.io/react-icons/) |
-| **Email / Contact** | [Resend](https://resend.com/) |
-| **Form Validation** | [Validator.js](https://github.com/validatorjs/validator.js) |
+| **Email / Contact** | [EmailJS](https://www.emailjs.com/) |
 | **Video Streaming** | [HLS.js](https://github.com/video-dev/hls.js/) |
 | **Media Hosting** | Cloudinary, YouTube (embed), Vimeo (embed) |
 | **Fonts** | Inter + Syne (via `next/font/google`) |
@@ -85,9 +84,6 @@ dualmodestudio/
     │   ├── short-form-editing/    # /short-form-editing route
     │   ├── thumbnail-design/      # /thumbnail-design route
     │   ├── contact/               # /contact route (also embedded in homepage)
-    │   └── api/
-    │       └── contact/           # POST /api/contact — email via Resend
-    │
     ├── components/                # Reusable UI components
     │   ├── Navbar.jsx
     │   ├── Footer.jsx
@@ -152,7 +148,7 @@ The homepage is a **single-page scroll experience** composed of the following se
 | 7 | **Results Section** | Real view-count screenshots linked to live Instagram reels, plus before/after edit comparison images. |
 | 8 | **Pain Points** | Three pain-point cards (No Time to Build, Content That Doesn't Convert, Freelancer Chaos) followed by a CTA linking to a Calendly strategy session. |
 | 9 | **Founders** | Profile cards for both founders with name, role, expertise, and social links (LinkedIn, Instagram, X). |
-| 10 | **Contact** | Full-width embedded contact form (name, email, message) — submits via the `/api/contact` route using Resend. |
+| 10 | **Contact** | Full-width embedded contact form (name, email, message) using EmailJS. |
 
 ### Portfolio (`/portfolio`)
 
@@ -207,8 +203,8 @@ All video cards are non-interactive overlays (pointer-events disabled) with clic
 
 ### Contact System
 - Form fields: First Name, Last Name, Email, Message.
-- Client-side email validation via `validator.js`.
-- Server-side submission via `/api/contact` (Next.js API Route) using the **Resend** email SDK.
+- Client-side submission through a shared EmailJS helper.
+- Service inquiry forms include the selected service in the email content.
 - Success/error states shown inline without page reload.
 
 ### Navigation
@@ -256,7 +252,8 @@ All content data is stored as simple JavaScript export files in `src/lib/` — m
 |---|---|
 | `Navbar.jsx` | Fixed top nav with logo, desktop links (Portfolio, Services, Contact), WhatsApp CTA button, and animated mobile hamburger menu |
 | `Footer.jsx` | Logo, tagline, business email (`business@dualmodestudio.com`), WhatsApp + Instagram social icons, copyright |
-| `ContactForm.jsx` | Client-side form with loading/success states, submits to `/api/contact` |
+| `ContactForm.jsx` | Client-side form with loading/success states, submitted through EmailJS |
+| `ServiceContactForm.jsx` | Shared EmailJS form used by all service pages |
 | `VideoModal.jsx` | Full-screen modal overlay; handles YouTube (autoplay iframe), Vimeo (autoplay iframe), images, and MP4 video |
 | `PortfolioCard.jsx` | Filterable portfolio card with YouTube iframe / Vimeo iframe / image / video preview; click opens `VideoModal` |
 | `WorkCard.jsx` | Homepage featured work card supporting landscape and reel (9:16) aspect ratios; YouTube / Vimeo / MP4 preview |
@@ -314,10 +311,12 @@ npm run lint
 Create a `.env.local` file in the project root with the following:
 
 ```env
-RESEND_API_KEY=your_resend_api_key_here
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id_here
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id_here
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
 ```
 
-> The `RESEND_API_KEY` is used by the `/api/contact` route to send emails via the Resend API. Without this key, the contact form submission will fail.
+> These values configure EmailJS for all website contact forms.
 
 ---
 
@@ -329,7 +328,7 @@ The project is hosted on **Vercel**. To deploy:
 
 1. Push to the `main` branch on GitHub (`AnoopPatel582/DualModeStudio`).
 2. Vercel automatically builds and deploys on every push.
-3. Set the `RESEND_API_KEY` environment variable in the Vercel project settings.
+3. Set the three `NEXT_PUBLIC_EMAILJS_*` environment variables in the Vercel project settings.
 
 ---
 
