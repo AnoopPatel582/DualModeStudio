@@ -2,19 +2,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { portfolioData } from "@/lib/portfolioData";
+import { filterPortfolioWorks, portfolioTabs } from "@/lib/portfolioFilters";
 import PortfolioCard from "@/components/PortfolioCard";
 import VideoModal from "@/components/VideoModal";
 import { syne } from "@/app/fonts";
 
-const tabs = ["All", "Long Form Video", "Podcast", "Short Form Video", "Thumbnails"];
-
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("All");
   const [activeVideo, setActiveVideo] = useState(null);
-  const filtered =
-    activeTab === "All"
-      ? portfolioData
-      : portfolioData.filter((work) => work.category === activeTab);
+  const filtered = filterPortfolioWorks(portfolioData, activeTab);
 
   return (
     <main className="min-h-screen bg-black">
@@ -34,7 +30,7 @@ export default function PortfolioPage() {
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {tabs.map((tab) => (
+          {portfolioTabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
