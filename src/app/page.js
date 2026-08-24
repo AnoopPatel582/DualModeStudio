@@ -7,7 +7,7 @@ import TrustSection from "@/sections/homepage/TrustSection";
 import AuthorityAndAdvantageSection from "@/sections/homepage/AuthorityAndAdvantageSection";
 // import ExecutionCapabilitiesSection from "@/sections/homepage/ExecutionCapabilitiesSection";
 import FoundersSection from "@/sections/homepage/FoundersSection";
-import ContactPage from "@/app/contact/page";
+import ContactSection from "@/sections/homepage/ContactSection";
 import MotionGraphicsSection from "@/sections/homepage/MotionGraphicsSection";
 import ResultsSection from "@/sections/homepage/ResultsSection";
 import PainPointsSection from "@/sections/homepage/PainPointsSection";
@@ -45,7 +45,7 @@ export default function Home() {
         <FoundersSection />
       </ScrollReveal>
       <ScrollReveal>
-        <ContactPage />
+        <ContactSection />
       </ScrollReveal>
     </>
   );
