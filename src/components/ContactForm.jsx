@@ -88,7 +88,7 @@ export default function ContactForm() {
 
       {success && (
         <p className="mt-6 text-green-400 text-center">
-          ✓ Message sent successfully. We'll get back to you soon.
+          ✓ Message sent successfully. We’ll get back to you soon.
         </p>
       )}
 

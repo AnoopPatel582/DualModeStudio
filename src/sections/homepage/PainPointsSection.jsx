@@ -83,7 +83,7 @@ export default function PainPointsSection() {
                 {/* ── That's Exactly Why We Exist ── */}
                 <div className="mt-8 text-center">
                     <h3 className={`${syne.className} text-3xl md:text-4xl font-semibold text-white mb-4`}>
-                        That's Exactly Why We Exist.
+                        That’s Exactly Why We Exist.
                     </h3>
 
                     {/* Book a call button */}

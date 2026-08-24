@@ -22,7 +22,7 @@ export default function TrustSection() {
           Trusted by creators worldwide
         </h2>
         <p className="mt-4 text-white/60">
-          Real feedback from real clients who've grown with us.
+          Real feedback from real clients who’ve grown with us.
         </p>
       </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   isYouTubeUrl,
   isVimeoUrl,
@@ -50,10 +51,12 @@ export default function PortfolioCard({ work, openModal }) {
             className="pointer-events-none absolute inset-0 z-0 h-full w-full border-0"
           />
         ) : isImage ? (
-          <img
+          <Image
             src={video}
             alt={title}
-            className="pointer-events-none h-full w-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+            className="pointer-events-none object-cover"
           />
         ) : (
           <video

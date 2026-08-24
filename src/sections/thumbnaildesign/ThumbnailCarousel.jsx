@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { syne } from "@/app/fonts";
 import { thumbnailWorksData } from "@/lib/thumbnailWorksData";
 
@@ -134,9 +135,11 @@ export default function ThumbnailCarousel() {
                   cursor: isFront ? "zoom-in" : "pointer",
                 }}
               >
-                <img
+                <Image
                   src={thumb}
                   alt="thumbnail"
+                  width={400}
+                  height={225}
                   className="w-[400px] h-[225px] max-w-none rounded-2xl shadow-2xl select-none pointer-events-none object-cover"
                   draggable={false}
                 />
@@ -176,10 +179,12 @@ export default function ThumbnailCarousel() {
 
           {/* Image */}
 
-          <img
+          <Image
             src={thumbnailWorksData[activeIndex]}
             alt="thumbnail preview"
-            className="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl cursor-default select-none"
+            width={1600}
+            height={900}
+            className="h-auto w-auto max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl cursor-default select-none"
             draggable={false}
           />
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { X } from "lucide-react";
 import {
   isYouTubeUrl,
@@ -55,11 +56,15 @@ export default function VideoModal({ video, onClose }) {
               />
             </div>
           ) : isImageMediaUrl(video) ? (
-            <img
-              src={video}
-              alt=""
-              className="w-full max-h-[85vh] object-contain rounded-xl border border-white/10 mx-auto"
-            />
+            <div className="relative aspect-video w-full max-h-[85vh] overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src={video}
+                alt="Portfolio preview"
+                fill
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="object-contain"
+              />
+            </div>
           ) : (
             <div className="aspect-video w-full rounded-xl border border-white/10 bg-black flex items-center justify-center">
               <video

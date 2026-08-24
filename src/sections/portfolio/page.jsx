@@ -28,7 +28,7 @@ export default function PortfolioPage() {
             Our Portfolio
           </h1>
           <p className="mt-4 text-white/60">
-            A glimpse into the work powering our clients' growth on YouTube.
+            A glimpse into the work powering our clients’ growth on YouTube.
           </p>
         </div>
 
