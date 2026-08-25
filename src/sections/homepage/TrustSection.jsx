@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { syne } from "@/app/fonts";
 import Image from "next/image";
 import {
@@ -12,6 +12,17 @@ import {
 
 export default function TrustSection() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const lastTriggerRef = useRef(null);
+
+  const openFeedback = (event, image) => {
+    lastTriggerRef.current = event.currentTarget;
+    setSelectedImage(image);
+  };
+
+  const closeFeedback = () => {
+    setSelectedImage(null);
+    requestAnimationFrame(() => lastTriggerRef.current?.focus());
+  };
 
   useEffect(() => {
     if (!selectedImage) return;
@@ -19,6 +30,7 @@ export default function TrustSection() {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setSelectedImage(null);
+        requestAnimationFrame(() => lastTriggerRef.current?.focus());
       }
     };
 
@@ -84,7 +96,7 @@ export default function TrustSection() {
                 <button
                   key={i}
                   type="button"
-                  onClick={() => setSelectedImage(item.src)}
+                  onClick={(event) => openFeedback(event, item.src)}
                   aria-label={`View ${item.alt}`}
                   className="shrink-0 w-[320px] h-[250px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
                 >
@@ -117,7 +129,7 @@ export default function TrustSection() {
                 <button
                   key={i}
                   type="button"
-                  onClick={() => setSelectedImage(item.src)}
+                  onClick={(event) => openFeedback(event, item.src)}
                   aria-label={`View ${item.alt}`}
                   className="shrink-0 w-[320px] h-[220px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
                 >
@@ -141,7 +153,7 @@ export default function TrustSection() {
           <button
             key={i}
             type="button"
-            onClick={() => setSelectedImage(item.src)}
+            onClick={(event) => openFeedback(event, item.src)}
             aria-label={`View ${item.alt}`}
             className="w-[220px] h-[360px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
           >
@@ -179,7 +191,7 @@ export default function TrustSection() {
           aria-modal="true"
           aria-label="Client feedback preview"
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center px-6"
-          onClick={() => setSelectedImage(null)}
+          onClick={closeFeedback}
         >
           <div
             className="relative max-w-3xl w-full"
@@ -189,7 +201,7 @@ export default function TrustSection() {
             <button
               type="button"
               autoFocus
-              onClick={() => setSelectedImage(null)}
+              onClick={closeFeedback}
               aria-label="Close feedback preview"
               className="absolute -top-4 -right-4 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white transition-all duration-200"
             >
