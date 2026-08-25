@@ -68,9 +68,11 @@ export default function TrustSection() {
           <div className="flex overflow-hidden">
             <div className="flex gap-6 animate-marquee-left">
               {[...feedbackRow1, ...feedbackRow1].map((item, i) => (
-                <div
+                <button
                   key={i}
+                  type="button"
                   onClick={() => setSelectedImage(item.src)}
+                  aria-label={`View ${item.alt}`}
                   className="shrink-0 w-[320px] h-[250px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
                 >
                   <Image
@@ -80,7 +82,7 @@ export default function TrustSection() {
                     height={200}
                     className="object-cover w-full h-full"
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -99,9 +101,11 @@ export default function TrustSection() {
           <div className="flex overflow-hidden">
             <div className="flex gap-6 animate-marquee-right">
               {[...feedbackRow2, ...feedbackRow2].map((item, i) => (
-                <div
+                <button
                   key={i}
+                  type="button"
                   onClick={() => setSelectedImage(item.src)}
+                  aria-label={`View ${item.alt}`}
                   className="shrink-0 w-[320px] h-[220px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
                 >
                   <Image
@@ -111,7 +115,7 @@ export default function TrustSection() {
                     height={200}
                     className="object-cover w-full h-full"
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -121,9 +125,11 @@ export default function TrustSection() {
       {/* ── Portrait Feedbacks — static centered row ── */}
       <div className="flex justify-center gap-6 px-6 mb-20">
         {feedbackPortrait.map((item, i) => (
-          <div
+          <button
             key={i}
+            type="button"
             onClick={() => setSelectedImage(item.src)}
+            aria-label={`View ${item.alt}`}
             className="w-[220px] h-[360px] rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1"
           >
             <Image
@@ -133,7 +139,7 @@ export default function TrustSection() {
               height={360}
               className="object-cover w-full h-full"
             />
-          </div>
+          </button>
         ))}
       </div>
 
