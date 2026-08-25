@@ -190,7 +190,7 @@ The site supports three video source types with automatic detection and correct 
 - **YouTube** — Detected via `isYouTubeUrl()`. Share links and `watch?v=` URLs auto-converted to embed format via `toYouTubeEmbedUrl()`.
 - **Vimeo** — Detected via `isVimeoUrl()`. Share links (`vimeo.com/{id}?share=copy`) auto-converted to player embed URLs (`player.vimeo.com/video/{id}`) via `toVimeoEmbedUrl()`.
 - **Direct MP4** — Cloudinary-hosted MP4 files rendered via `<video>` tag with autoplay, mute, and loop.
-- **Images** — Static image files rendered via `<img>` tag (used for thumbnails in the portfolio).
+- **Images** — Static image files rendered with Next.js `Image` (used for portfolio thumbnails).
 
 All video cards are non-interactive overlays (pointer-events disabled) with click-to-modal behaviour. The **VideoModal** component opens the video full-size with autoplay enabled.
 
