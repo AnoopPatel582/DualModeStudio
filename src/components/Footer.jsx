@@ -55,6 +55,7 @@ export default function Footer() {
             <a
               href="https://wa.me/message/THW73AALQP6HB1"
               target="_blank"
+              aria-label="Contact DualMode Studio on WhatsApp"
               className="text-gray-400 hover:text-green-500 transition"
             >
               <FaWhatsapp />
@@ -63,6 +64,7 @@ export default function Footer() {
             <a
               href="https://www.instagram.com/bydualmodestudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
+              aria-label="Follow DualMode Studio on Instagram"
               className="text-gray-400 hover:text-pink-500 transition"
             >
               <FaInstagram />

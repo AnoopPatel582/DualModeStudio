@@ -43,9 +43,10 @@ export default function FounderCard({ founder }) {
 
       {/* Contact Links */}
       <div className="mt-6 flex justify-center gap-4 text-base text-white/50">
-      <a
+        <a
               href={founder.links.linkedin}
               target="_blank"
+              aria-label={`${founder.name} on LinkedIn`}
               className="text-gray-400 hover:text-blue-500 transition"
             >
               <FaLinkedin/>
@@ -53,6 +54,7 @@ export default function FounderCard({ founder }) {
         <a
               href={founder.links.instagram}
               target="_blank"
+              aria-label={`${founder.name} on Instagram`}
               className="text-gray-400 hover:text-pink-500 transition"
             >
               <FaInstagram />
@@ -60,6 +62,7 @@ export default function FounderCard({ founder }) {
         <a
               href={founder.links.x}
               target="_blank"
+              aria-label={`${founder.name} on X`}
               className="text-gray-400 hover:text-white transition"
             >
               <FaXTwitter />
