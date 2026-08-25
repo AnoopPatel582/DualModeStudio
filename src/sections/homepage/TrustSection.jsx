@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { syne } from "@/app/fonts";
 import Image from "next/image";
 import {
@@ -12,6 +12,19 @@ import {
 
 export default function TrustSection() {
   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage]);
 
   return (
     <section className="relative w-full py-8 overflow-hidden">
@@ -175,6 +188,7 @@ export default function TrustSection() {
             {/* Close button */}
             <button
               type="button"
+              autoFocus
               onClick={() => setSelectedImage(null)}
               aria-label="Close feedback preview"
               className="absolute -top-4 -right-4 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white transition-all duration-200"
