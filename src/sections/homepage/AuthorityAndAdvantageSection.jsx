@@ -46,9 +46,9 @@ export default function AuthorityAndAdvantageSection() {
 
               {/* Content */}
               <div>
-                <h4 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-white">
                   {reason.title}
-                </h4>
+                </h3>
                 <p className="mt-2 leading-relaxed text-white/60">
                   {reason.description}
                 </p>
