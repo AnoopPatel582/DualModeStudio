@@ -162,6 +162,9 @@ export default function TrustSection() {
       {/* ── Lightbox Modal ── */}
       {selectedImage && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Client feedback preview"
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center px-6"
           onClick={() => setSelectedImage(null)}
         >
@@ -171,7 +174,9 @@ export default function TrustSection() {
           >
             {/* Close button */}
             <button
+              type="button"
               onClick={() => setSelectedImage(null)}
+              aria-label="Close feedback preview"
               className="absolute -top-4 -right-4 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white transition-all duration-200"
             >
               ✕
