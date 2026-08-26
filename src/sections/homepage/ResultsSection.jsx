@@ -43,6 +43,7 @@ export default function ResultsSection() {
                       src={item.src}
                       alt={item.alt}
                       fill
+                      sizes="(min-width: 768px) 191px, calc(50vw - 30px)"
                       className="object-cover scale-[1.03] transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />

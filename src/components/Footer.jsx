@@ -18,9 +18,10 @@ export default function Footer() {
           <Image
             src="/logo_title.png"
             alt="DualMode Studio"
-            width={300}
-            height={100}
-            
+            width={2200}
+            height={1080}
+            className="h-auto w-[300px]"
+            loading="eager"
           />
 
           <p className="text-gray-400 leading-relaxed mt-2">

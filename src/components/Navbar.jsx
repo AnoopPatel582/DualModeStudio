@@ -33,9 +33,10 @@ export default function Navbar() {
                     <Image
                         src="/logo_title.png"
                         alt="DualModeStudio Logo"
-                        width={300}
-                        height={80}
-                        priority
+                        width={2200}
+                        height={1080}
+                        className="h-auto w-[200px]"
+                        loading="eager"
                     />
                 </Link>
 
