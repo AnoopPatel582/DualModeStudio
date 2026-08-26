@@ -140,7 +140,7 @@ The homepage is a **single-page scroll experience** composed of the following se
 | # | Section | Description |
 |---|---|---|
 | 1 | **Hero** | Animated word-by-word headline with a muted Cloudinary background video loop. Core copy: *"Social Media production, retention editing & more"* |
-| 2 | **Hero Video Section** | Featured work preview — 4 landscape YouTube embeds (top row) + 4 vertical Vimeo reel embeds (bottom row). Click to open in a modal. |
+| 2 | **Hero Video Section** | Featured work preview — 4 landscape YouTube posters (top row) + 4 vertical Vimeo reel posters (bottom row). Click to load the player in a modal. |
 | 3 | **Growth Framework** | Two service capability cards outlining the studio's core execution pillars — short-form repurposing, YouTube optimization, personal brand building, thumbnail design & scripting. |
 | 4 | **Authority & Advantage** | Three numbered reasons to partner with the studio: YouTube-First Focus, Proven Frameworks, Transparent Tracking. |
 | 5 | **Trust Section** | Scrolling marquee of 9 client/brand logos + two rows of auto-scrolling client feedback screenshots + trust statistics (50+ clients, 1,000+ videos, 50M+ YouTube views). |
@@ -192,7 +192,7 @@ The site supports three video source types with automatic detection and correct 
 - **Direct MP4** — Cloudinary-hosted MP4 files rendered via `<video>` tag with autoplay, mute, and loop.
 - **Images** — Static image files rendered with Next.js `Image` (used for portfolio thumbnails).
 
-All video cards are non-interactive overlays (pointer-events disabled) with click-to-modal behaviour. The **VideoModal** component opens the video full-size with autoplay enabled.
+Homepage work cards use lightweight poster images and load the selected player only inside **VideoModal**, which opens the video full-size with autoplay enabled.
 
 ### Animations & Interactions
 - **Framer Motion** — Word-by-word stagger animation on the Hero headline and subheading; scroll-triggered `whileInView` reveals on sections.
@@ -256,7 +256,7 @@ All content data is stored as simple JavaScript export files in `src/lib/` — m
 | `ServiceContactForm.jsx` | Shared EmailJS form used by all service pages |
 | `VideoModal.jsx` | Full-screen modal overlay; handles YouTube (autoplay iframe), Vimeo (autoplay iframe), images, and MP4 video |
 | `PortfolioCard.jsx` | Filterable portfolio card with YouTube iframe / Vimeo iframe / image / video preview; click opens `VideoModal` |
-| `WorkCard.jsx` | Homepage featured work card supporting landscape and reel (9:16) aspect ratios; YouTube / Vimeo / MP4 preview |
+| `WorkCard.jsx` | Homepage featured work card with lightweight poster previews in landscape and reel (9:16) aspect ratios; click opens the media modal |
 | `FounderCard.jsx` | Founder profile card with avatar, name, role, expertise, and social link icons |
 | `CapabilityCard.jsx` | Service capability highlight card |
 | `AdaptiveVideo.jsx` | Adaptive HLS/MP4 video player using HLS.js for streaming video support |

@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  isYouTubeUrl,
-  isVimeoUrl,
-  toVimeoEmbedUrl,
-  buildYouTubePortfolioCardEmbedSrc,
-} from "@/lib/mediaUrl";
+import Image from "next/image";
 
 export default function WorkCard({ work, openModal, variant = "landscape" }) {
   const isReel = variant === "reel";
@@ -42,32 +37,27 @@ export default function WorkCard({ work, openModal, variant = "landscape" }) {
               1–4)
             </p>
           </div>
-        ) : isYouTubeUrl(work.video) ? (
-          <iframe
-            src={buildYouTubePortfolioCardEmbedSrc(work.video)}
-            title={work.title}
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="pointer-events-none absolute inset-0 h-full w-full border-0"
-          />
-        ) : isVimeoUrl(work.video) ? (
-          <iframe
-            src={toVimeoEmbedUrl(work.video)}
-            title={work.title}
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            className="pointer-events-none absolute inset-0 h-full w-full border-0"
-          />
+        ) : work.thumbnail ? (
+          <>
+            <Image
+              src={work.thumbnail}
+              alt={`${work.title} preview`}
+              fill
+              sizes={isReel ? "(min-width: 768px) 188px, 50vw" : "(min-width: 768px) 388px, 50vw"}
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-black/10 transition-colors duration-300 group-hover:bg-black/20" />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/60 pl-0.5 text-lg text-white backdrop-blur-sm"
+            >
+              ▶
+            </span>
+          </>
         ) : (
-          <video
-            src={work.video}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="h-full w-full object-contain"
-            onMouseEnter={(e) => e.target.setAttribute("controls", "controls")}
-            onMouseLeave={(e) => e.target.removeAttribute("controls")}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-black"
           />
         )}
       </div>
