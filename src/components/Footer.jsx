@@ -9,31 +9,35 @@ export default function Footer() {
 
       {/* Top Section */}
 
-      <div className="flex flex-col md:flex-row md:justify-around items-center md:items-start gap-12 px-6">
+      <div className="flex flex-col md:flex-row md:justify-around items-center md:items-start gap-12 px-6 pt-12">
 
         {/* Left Block */}
 
         <div className="flex flex-col items-center md:items-start max-w-sm text-center md:text-left">
 
-          <Image
-            src="/logo_title.png"
-            alt="DualMode Studio"
-            width={2200}
-            height={1080}
-            className="h-auto w-[300px]"
-            loading="eager"
-          />
+          <div
+            className="relative w-[300px] max-w-full overflow-hidden"
+            style={{ aspectRatio: "2200 / 128" }}
+          >
+            <Image
+              src="/logo_title.png"
+              alt="DualMode Studio"
+              width={2200}
+              height={1080}
+              className="absolute left-0 top-0 h-auto w-full -translate-y-[43.15%]"
+              loading="eager"
+            />
+          </div>
 
-          <p className="text-gray-400 leading-relaxed mt-2">
+          <p className="mt-2 w-[300px] max-w-full text-gray-400 leading-relaxed md:pl-[33px]">
             Performance-driven YouTube growth systems engineered for scale.
           </p>
 
         </div>
 
-
         {/* Right Block */}
 
-        <div className="text-center md:text-left mt-12">
+        <div className="mt-12 text-center md:mt-0 md:text-left">
 
           <p className="text-gray-300 mb-2">
             <a
@@ -45,7 +49,7 @@ export default function Footer() {
           </p>
 
           <p className="text-gray-400 mb-4">
-            Operating remotely worldwide.
+            Based in Delhi, India. Serving clients worldwide.
           </p>
 
 
