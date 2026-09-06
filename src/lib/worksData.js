@@ -1,5 +1,38 @@
 const allWorks = [
   {
+    title: "How to build a personal brand Khaled",
+    description:
+      "A personal-branding reel showing how real estate agents can strengthen their online presence.",
+    category: "Personal Branding",
+    thumbnail: "https://i.ytimg.com/vi/UU0QPsmA9j8/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/UU0QPsmA9j8",
+  },
+  {
+    title: "DMS_032",
+    description:
+      "A polished podcast clip using captions and visual emphasis to keep viewers engaged.",
+    category: "Podcast",
+    thumbnail: "https://i.ytimg.com/vi/RY_8ToGqOAE/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/RY_8ToGqOAE",
+  },
+  {
+    title: "Nested Sequence 651",
+    description:
+      "A fast-paced educational reel explaining seller financing in real estate.",
+    category: "Real Estate",
+    thumbnail: "https://i.ytimg.com/vi/QEQwFNsv9Ys/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/QEQwFNsv9Ys",
+  },
+  {
+    title: "Revised Carla Sample 01",
+    description:
+      "An energetic restaurant review edit highlighting the food and dining experience.",
+    category: "Food & Lifestyle",
+    thumbnail: "https://i.ytimg.com/vi/4Kr8AyZ17U8/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/4Kr8AyZ17U8",
+  },
+  /* Previous reel works
+  {
     title: "Visual Curiosity",
     description:
       "Psychology trick to get views on any niche videos",
@@ -55,6 +88,7 @@ const allWorks = [
     video:
       "https://res.cloudinary.com/dkeeyufv7/video/upload/v1772739677/file_4_raanjw.mp4",
   },
+  */
 ];
 
 /**
@@ -62,6 +96,35 @@ const allWorks = [
  * Leave video as "" until you add a link.
  */
 export const worksLandscape = [
+  {
+    title: "25M AI Expert Ranks",
+    description:
+      "A tier-list breakdown ranking AI systems, tools, and websites.",
+    thumbnail: "https://i.ytimg.com/vi/5J7WQzMc-Ks/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/5J7WQzMc-Ks",
+  },
+  {
+    title: "Exposing the 22 yr old entrepreneur making 600k month",
+    description:
+      "A profile of a 22-year-old entrepreneur generating $600K per month.",
+    thumbnail: "https://i.ytimg.com/vi/u5jfO6Ix-8g/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/u5jfO6Ix-8g",
+  },
+  {
+    title: "5 Glutes exercises mistakes",
+    description:
+      "A practical breakdown of common glute-training mistakes and how to correct them.",
+    thumbnail: "https://i.ytimg.com/vi/8QOJNVMDiFM/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/8QOJNVMDiFM",
+  },
+  {
+    title: "Battle of Coruscant",
+    description:
+      "A cinematic breakdown of the Battle of Coruscant and the forces involved.",
+    thumbnail: "https://i.ytimg.com/vi/0MDDQwdQ790/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/0MDDQwdQ790",
+  },
+  /* Previous landscape works
   {
     title: "The 7 LEVELS of Clone Trooper Explained!",
     description: "Red Five explores the diverse ranks within the Grand Army of the Republic.",
@@ -90,6 +153,7 @@ export const worksLandscape = [
     // category: "Motion",
     video: "https://www.youtube.com/embed/H1VWOgebWVg?si=aGps22u6qsDxb9ea",
   },
+  */
 ];
 
 /** Bottom row: same four spotlight clips as before (vertical / reel layout) */
