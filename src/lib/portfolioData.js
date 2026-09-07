@@ -342,33 +342,88 @@ export const portfolioData = [
     category: "Short Form Video",
   },
   {
+    title: "Meta Failed Again",
+    video: "/Thumbnails/1.jpg",
+    category: "Thumbnails",
+  },
+  {
+    title: "The System Is Rigged",
+    video: "/Thumbnails/2.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Stop Wasting Your Time",
+    video: "/Thumbnails/3.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "AI vs Humanity: The Final War",
+    video: "/Thumbnails/4.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Take Risks Like the 0.00001%",
+    video: "/Thumbnails/5.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Zero to First Client",
+    video: "/Thumbnails/6.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "The Money Trap",
+    video: "/Thumbnails/7.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Why Am I Still Stuck?",
+    video: "/Thumbnails/8.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "The Hidden War",
+    video: "/Thumbnails/9.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Albert Einstein: The Genius Who Changed Physics",
+    video: "/Thumbnails/10.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Don't Run Video Ads",
+    video: "/Thumbnails/11.jpg",
+    category: "Thumbnails",
+  },
+  {
     title: "Construction Accident",
-    video: "/thumb2.png",
+    video: "/Thumbnails/thumb2.png",
     category: "Thumbnails",
   },
   {
     title: "Castor Oil vs. Honey",
-    video: "/thumb3.png",
+    video: "/Thumbnails/thumb3.png",
     category: "Thumbnails",
   },
   {
     title: "Celebrity Mugshot",
-    video: "/thumb4.jpeg",
+    video: "/Thumbnails/thumb4.jpeg",
     category: "Thumbnails",
   },
-  {
-    title: "Alien/UFO",
-    video: "/thumb1.png",
-    category: "Thumbnails",
-  },
-  {
-    title: "Censored Secret",
-    video: "/thumb5.png",
-    category: "Thumbnails",
-  },
-  {
-    title: "Bitcoin Puppeteer",
-    video: "/thumb6.png",
-    category: "Thumbnails",
-  },
+  // {
+  //   title: "Alien/UFO",
+  //   video: "/Thumbnails/thumb1.png",
+  //   category: "Thumbnails",
+  // },
+  // {
+  //   title: "Censored Secret",
+  //   video: "/Thumbnails/thumb5.png",
+  //   category: "Thumbnails",
+  // },
+  // {
+  //   title: "Bitcoin Puppeteer",
+  //   video: "/Thumbnails/thumb6.png",
+  //   category: "Thumbnails",
+  // },
 ];
