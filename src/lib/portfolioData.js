@@ -341,11 +341,6 @@ export const portfolioData = [
     video: "https://youtube.com/embed/nXy7HSzmTzs?si=yyc2DifKcgvIDz2T",
     category: "Short Form Video",
   },
-  // {
-  //   title: "Alien/UFO",
-  //   video: "/thumb1.png",
-  //   category: "Thumbnails",
-  // },
   {
     title: "Construction Accident",
     video: "/thumb2.png",
@@ -361,14 +356,19 @@ export const portfolioData = [
     video: "/thumb4.jpeg",
     category: "Thumbnails",
   },
-  // {
-  //   title: "Censored Secret",
-  //   video: "/thumb5.png",
-  //   category: "Thumbnails",
-  // },
-  // {
-  //   title: "Bitcoin Puppeteer",
-  //   video: "/thumb6.png",
-  //   category: "Thumbnails",
-  // },
+  {
+    title: "Alien/UFO",
+    video: "/thumb1.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Censored Secret",
+    video: "/thumb5.png",
+    category: "Thumbnails",
+  },
+  {
+    title: "Bitcoin Puppeteer",
+    video: "/thumb6.png",
+    category: "Thumbnails",
+  },
 ];
