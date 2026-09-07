@@ -21,7 +21,7 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Video Editing Agency in Delhi, India | DualMode Studio",
+    title: "DualMode Studio | Video Editing Agency in Delhi, India",
     description,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -30,7 +30,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Video Editing Agency in Delhi, India | DualMode Studio",
+    title: "DualMode Studio | Video Editing Agency in Delhi, India",
     description,
   },
 };

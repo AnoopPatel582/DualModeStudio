@@ -8,7 +8,7 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
   title: {
-    default: "Video Editing Agency in Delhi, India | DualMode Studio",
+    default: "DualMode Studio | Video Editing Agency in Delhi, India",
     template: `%s | ${SITE_NAME}`,
   },
   description:
@@ -22,7 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${inter.variable} ${syne.variable} font-sans bg-black text-white antialiased`}>
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${syne.variable} font-sans bg-black text-white antialiased`}
+      >
         <ScrollToHash />
         {children}
         <Footer />
