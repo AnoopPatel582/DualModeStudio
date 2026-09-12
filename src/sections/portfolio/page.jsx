@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { portfolioData } from "@/lib/portfolioData";
 import { filterPortfolioWorks, portfolioTabs } from "@/lib/portfolioFilters";
 import PortfolioCard from "@/components/PortfolioCard";
 import VideoModal from "@/components/VideoModal";
 import { syne } from "@/app/fonts";
 
-export default function PortfolioPage() {
+export default function PortfolioPage({ portfolioData }) {
   const [activeTab, setActiveTab] = useState("All");
   const [activeVideo, setActiveVideo] = useState(null);
   const filtered = filterPortfolioWorks(portfolioData, activeTab);
@@ -48,9 +47,9 @@ export default function PortfolioPage() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((work, index) => (
+          {filtered.map((work) => (
             <PortfolioCard
-              key={index}
+              key={work.id}
               work={work}
               openModal={setActiveVideo}
             />

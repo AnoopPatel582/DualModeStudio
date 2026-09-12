@@ -5,13 +5,112 @@
 
 export function isYouTubeUrl(url) {
   if (!url || typeof url !== "string") return false;
-  return /youtube\.com\/(embed\/|watch\?v=)|youtu\.be\//i.test(url);
+  return /youtube\.com\/(embed\/|shorts\/|watch\?v=)|youtu\.be\//i.test(url);
+}
+
+/** Extract a YouTube video ID from watch, embed, Shorts or youtu.be URLs. */
+export function getYouTubeVideoId(url) {
+  if (!url || typeof url !== "string") return null;
+
+  const trimmed = url.trim();
+  const match = trimmed.match(
+    /(?:youtube\.com\/(?:embed\/|shorts\/|watch\?v=)|youtu\.be\/)([^?&#/]+)/i,
+  );
+
+  return match?.[1] || null;
+}
+
+/** Lightweight dashboard preview without mounting a YouTube player. */
+export function getYouTubeThumbnailUrl(url) {
+  const videoId = getYouTubeVideoId(url);
+  return videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : null;
+}
+
+/** Convert stored player URLs into normal public video-page URLs. */
+export function getPublicVideoUrl(url) {
+  if (!url || typeof url !== "string") return url;
+
+  const trimmed = url.trim();
+  const youtubeId = getYouTubeVideoId(trimmed);
+
+  if (youtubeId) {
+    return `https://www.youtube.com/watch?v=${youtubeId}`;
+  }
+
+  const vimeoId = trimmed.match(
+    /(?:player\.)?vimeo\.com\/(?:video\/)?(\d+)/i,
+  )?.[1];
+
+  if (vimeoId) {
+    return `https://vimeo.com/${vimeoId}`;
+  }
+
+  return trimmed;
+}
+
+/**
+ * Let Cloudinary resize/compress dashboard thumbnails before the browser loads
+ * them. Non-Cloudinary URLs are returned unchanged.
+ */
+export function isCloudinaryImageUrl(url) {
+  return (
+    typeof url === "string" &&
+    url.includes("res.cloudinary.com") &&
+    url.includes("/image/upload/")
+  );
+}
+
+export function getCloudinaryImageUrl(url, transformation) {
+  if (!url || typeof url !== "string") return url;
+
+  const uploadMarker = "/image/upload/";
+  if (!isCloudinaryImageUrl(url)) return url;
+
+  return url.replace(
+    uploadMarker,
+    `${uploadMarker}${transformation}/`,
+  );
+}
+
+export function getCloudinaryDashboardThumbnailUrl(url) {
+  return getCloudinaryImageUrl(
+    url,
+    "f_auto,q_auto,c_fill,w_480,h_270",
+  );
+}
+
+export function getCloudinaryPortfolioThumbnailUrl(url) {
+  return getCloudinaryImageUrl(
+    url,
+    "f_auto,q_auto,c_fill,w_960,h_540",
+  );
+}
+
+/** Prefer an uploaded thumbnail, otherwise derive a lightweight YouTube one. */
+export function getDashboardMediaPreviewUrl({ thumbnailUrl, videoUrl }) {
+  if (thumbnailUrl) return getCloudinaryDashboardThumbnailUrl(thumbnailUrl);
+  return getYouTubeThumbnailUrl(videoUrl);
 }
 
 /** Detect Vimeo share or embed links. */
 export function isVimeoUrl(url) {
   if (!url || typeof url !== "string") return false;
   return /vimeo\.com\//i.test(url);
+}
+
+export function getVideoPreviewType(url) {
+  if (!url || typeof url !== "string") return null;
+
+  try {
+    const parsedUrl = new URL(url.trim());
+    if (!new Set(["http:", "https:"]).has(parsedUrl.protocol)) return null;
+  } catch {
+    return null;
+  }
+
+  if (isYouTubeUrl(url)) return "youtube";
+  if (isVimeoUrl(url)) return "vimeo";
+  return "video";
 }
 
 /**
@@ -43,6 +142,10 @@ export function toYouTubeEmbedUrl(url) {
   const fromShort = trimmed.match(/youtu\.be\/([^?&]+)/i);
   if (fromShort) {
     return `https://www.youtube.com/embed/${fromShort[1]}`;
+  }
+  const fromShorts = trimmed.match(/youtube\.com\/shorts\/([^?&/]+)/i);
+  if (fromShorts) {
+    return `https://www.youtube.com/embed/${fromShorts[1]}`;
   }
   return trimmed;
 }

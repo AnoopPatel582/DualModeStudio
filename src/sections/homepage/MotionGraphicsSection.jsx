@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { worksLandscape, worksReels } from "@/lib/worksData";
 import WorkCard from "@/components/WorkCard";
 import VideoModal from "@/components/VideoModal";
 import { syne } from "@/app/fonts";
 import Link from "next/link";
 
-export default function MotionGraphicsSection() {
+export default function MotionGraphicsSection({ worksLandscape, worksReels }) {
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
@@ -29,9 +28,9 @@ export default function MotionGraphicsSection() {
           {/* Top: 4 landscape cards in a 2×2 grid (larger than 4-in-a-row) */}
           <div className="mx-auto w-full max-w-[800px]">
             <div className="grid grid-cols-2 gap-4 md:gap-6">
-              {worksLandscape.map((work, index) => (
+              {worksLandscape.map((work) => (
                 <WorkCard
-                  key={`landscape-${index}`}
+                  key={work.id}
                   work={work}
                   openModal={setActiveVideo}
                   variant="landscape"
@@ -43,9 +42,9 @@ export default function MotionGraphicsSection() {
           {/* Bottom: reels — same width as Results “Views” strip (4 across) */}
           <div className="mx-auto w-full max-w-[800px]">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {worksReels.map((work, index) => (
+              {worksReels.map((work) => (
                 <WorkCard
-                  key={`reel-${index}`}
+                  key={work.id}
                   work={work}
                   openModal={setActiveVideo}
                   variant="reel"

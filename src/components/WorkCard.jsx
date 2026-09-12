@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { isCloudinaryImageUrl } from "@/lib/mediaUrl";
 
 export default function WorkCard({ work, openModal, variant = "landscape" }) {
   const isReel = variant === "reel";
@@ -45,6 +46,7 @@ export default function WorkCard({ work, openModal, variant = "landscape" }) {
               fill
               sizes={isReel ? "(min-width: 768px) 188px, 50vw" : "(min-width: 768px) 388px, 50vw"}
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              unoptimized={isCloudinaryImageUrl(work.thumbnail)}
             />
             <div className="pointer-events-none absolute inset-0 bg-black/10 transition-colors duration-300 group-hover:bg-black/20" />
             <span

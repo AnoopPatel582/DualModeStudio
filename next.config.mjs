@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "i.vimeocdn.com",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
     ],
   },
 };

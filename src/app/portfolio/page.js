@@ -1,6 +1,10 @@
 import Navbar from "@/components/Navbar";
 import PortfolioPage from "@/sections/portfolio/page";
+import { listPortfolioMedia } from "@/lib/mediaRepository";
+import { toPortfolioWorks } from "@/lib/publicMedia";
 import { createPageMetadata } from "@/lib/seo";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   ...createPageMetadata({
@@ -14,11 +18,14 @@ export const metadata = {
   },
 };
 
-export default function Portfolio() {
+export default async function Portfolio() {
+  const media = await listPortfolioMedia();
+  const portfolioData = toPortfolioWorks(media);
+
   return (
     <>
       <Navbar />
-      <PortfolioPage />
+      <PortfolioPage portfolioData={portfolioData} />
     </>
   );
 }

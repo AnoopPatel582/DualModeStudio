@@ -6,6 +6,7 @@ import {
   isVimeoUrl,
   toVimeoEmbedUrl,
   isImageMediaUrl,
+  isCloudinaryImageUrl,
   buildYouTubePortfolioCardEmbedSrc,
 } from "@/lib/mediaUrl";
 
@@ -57,6 +58,7 @@ export default function PortfolioCard({ work, openModal }) {
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
             className="pointer-events-none object-cover"
+            unoptimized={isCloudinaryImageUrl(video)}
           />
         ) : (
           <video

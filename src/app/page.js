@@ -12,6 +12,10 @@ import MotionGraphicsSection from "@/sections/homepage/MotionGraphicsSection";
 import ResultsSection from "@/sections/homepage/ResultsSection";
 import PainPointsSection from "@/sections/homepage/PainPointsSection";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
+import { listHomepageMedia } from "@/lib/mediaRepository";
+import { toHomepageWorks } from "@/lib/publicMedia";
+
+export const dynamic = "force-dynamic";
 
 const description =
   "DualMode Studio is a Delhi-based video editing agency serving creators and brands worldwide with long-form editing, short-form editing, and YouTube thumbnail design.";
@@ -76,7 +80,11 @@ const structuredData = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const { worksLandscape, worksReels } = toHomepageWorks(
+    await listHomepageMedia(),
+  );
+
   return (
     <>
       <script
@@ -103,7 +111,10 @@ export default function Home() {
         <ExecutionCapabilitiesSection />
       </ScrollReveal> */}
       <ScrollReveal>
-        <MotionGraphicsSection />
+        <MotionGraphicsSection
+          worksLandscape={worksLandscape}
+          worksReels={worksReels}
+        />
       </ScrollReveal>
       <ScrollReveal>
         <ResultsSection />
