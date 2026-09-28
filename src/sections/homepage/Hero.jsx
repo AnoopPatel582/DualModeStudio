@@ -18,15 +18,8 @@ export default function Hero() {
       className="relative min-h-[70vh] flex justify-center text-center px-6 pt-32 md:pt-32 lg:pt-36 overflow-hidden"
     >
       {/* Background: DarkVeil WebGL animation */}
-      <div className="absolute inset-0 z-0 opacity-50">
-        <DarkVeil
-          hueShift={25}
-          noiseIntensity={0.05}
-          scanlineIntensity={0}
-          speed={2}
-          scanlineFrequency={0.5}
-          warpAmount={3}
-        />
+      <div className="absolute inset-0 z-0 opacity-80" aria-hidden="true">
+        <DarkVeil />
       </div>
       {/* Overlay to keep text readable */}
       <div className="absolute inset-0 z-[1] bg-black/40" aria-hidden />
